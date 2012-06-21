@@ -1,0 +1,12 @@
+- if Rails.env.development?
+	%br
+	_____________________________________________
+	%h3
+		Params:
+	= params.inspect
+	%h3
+		Flash:
+	= flash.inspect
+	%h3
+		Session:
+	= session.inspect

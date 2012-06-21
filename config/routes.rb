@@ -9,6 +9,7 @@ Gsltracker::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+  match '/home', :to => 'pages#home'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -49,6 +50,7 @@ Gsltracker::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  root :to => 'pages#home'
 
   # See how all your routes lay out with "rake routes"
 
