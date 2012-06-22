@@ -1,6 +1,17 @@
-/*Now the styles*/
+.pagetitle {
+	border-bottom: 1px solid #ff6600;
+}
+.pagetitle span {
+	display: inline-block;
+	border-bottom: 2px solid #ECBB13;
+}
 
-/*Time to apply widths for accordian to work
+.pagedetails {
+	text-align: center;
+}
+
+/*Accordian*/
+/*
 Width of image = 640px
 total images = 6
 so width of hovered image = 640px
@@ -14,7 +25,7 @@ default width = 840/6 = 140;
 	overflow: hidden;
 	
 	/*Time for some styling*/
-	margin: 100px auto;
+	margin: 25px auto;
 	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);

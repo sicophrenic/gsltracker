@@ -4,6 +4,9 @@ class PagesController < ApplicationController
     puts @homepage
   end
   
+  def about
+  end
+  
   protected
     def gomtv_home
       require 'mechanize'
