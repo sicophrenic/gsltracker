@@ -24,7 +24,7 @@ def generate_tournament
   # ZERG
   generate_players(writeFile, "Zerg")
   
-  writeFile.write("</code_s>\n")
+  writeFile.write("</code_s>\n\n")
   
   # ROUNDS
   generate_rounds(writeFile)
@@ -283,14 +283,12 @@ def generate_data(writeFile, datatype)
 		writeFile.write("\t\t\t</game1>\n")
 		writeFile.write("\t")
 		puts "Game 2"
-		writeFile.write("\t")
 		writeFile.write("\t\t\t<game2>\n")
 		writeFile.write("\t")
 		generate_game(writeFile)
 		writeFile.write("\t")
 		writeFile.write("\t\t\t</game2>\n")
 		puts "Game 3"
-		writeFile.write("\t")
 		writeFile.write("\t\t\t<game3>\n")
 		writeFile.write("\t")
 		generate_game(writeFile)

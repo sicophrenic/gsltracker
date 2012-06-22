@@ -1,3 +1,13 @@
 %h1 Welcome to GSL Tracker!
 
 We've got a lot of work to do, but check back soon for updates!
+
+.accordian
+	%ul
+		- @homepage.each do |pic,title|
+			%li
+				.image_title
+					%a{ :href => "http://www.gomtv.net" }
+						#{title}
+				%a{ :href => "http://www.gomtv.net" }
+					%img{ :src => "#{pic}" }
