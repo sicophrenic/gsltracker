@@ -4,6 +4,7 @@ gem 'rails'
 gem 'haml'
 gem 'jquery-rails'
 gem 'mechanize'
+gem 'devise'
 
 
 # Gems used only for assets and not required
