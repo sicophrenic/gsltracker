@@ -8,6 +8,7 @@
 require 'pp'
 
 def parse_data(path)
+  tournament = {}
 	file = File.open(path,"rb")
 	contents = file.read
 	contents = contents.gsub("\r","").gsub("\t","").gsub("\n","")
@@ -18,14 +19,17 @@ def parse_data(path)
 	year = league[0]
 	type = league[1]
 	season = league[2]
+	tournament["league"] = league
 	
 	# Banner
 	contents.match(/<banner>(.*)<\/banner>/)
 	banner = $1
+	tournament["banner"] = banner
 	
 	# Map Pool
 	contents.match(/<map_pool>(.*)<\/map_pool>/)
 	maps = $1.gsub(/<map_select>/,"").split("</map_select>")
+	tournament["maps"] = maps
 	
 	# Players
 	contents.match(/<protoss>(.*)<\/protoss>/)
@@ -34,6 +38,11 @@ def parse_data(path)
 	terran = $1.split("|")
 	contents.match(/<zerg>(.*)<\/zerg>/)
 	zerg = $1.split("|")
+	players = {}
+  players["p"] = protoss
+  players["t"] = terran
+  players["z"] = zerg
+	tournament["players"] = players
 	
 	# RO32
 	contents.match(/<ro32>(.*)<\/ro32>/)
@@ -71,7 +80,7 @@ def parse_data(path)
   ro4 = $1
   ro4_matches = {}
   matches = parse_group(ro4, "ro4")
-  ro8_matches["matches"] = matches
+  ro4_matches["matches"] = matches
   
   # RO2
   contents.match(/<ro2>(.*)<\/ro2>/)
@@ -80,7 +89,6 @@ def parse_data(path)
   finalset = parse_group(ro2, "ro2")
   ro2_matches["match1"] = finalset
   
-  tournament = {}
   tournament["ro32"] = ro32_groups
   tournament["ro16"] = ro16_groups
   tournament["ro8"] = ro8_matches

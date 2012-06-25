@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   end
   
   def about
+    # flash[:success] = "SUCCESS"
+    # flash[:error] = "ERROR"
+    # flash[:alert] = "ALERT"
+    # flash[:notice] = "NOTICE"
   end
   
   protected

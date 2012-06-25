@@ -1,0 +1,21 @@
+<h1>Listing mappools</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mappools.each do |mappool| %>
+  <tr>
+    <td><%= link_to 'Show', mappool %></td>
+    <td><%= link_to 'Edit', edit_mappool_path(mappool) %></td>
+    <td><%= link_to 'Destroy', mappool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mappool', new_mappool_path %>

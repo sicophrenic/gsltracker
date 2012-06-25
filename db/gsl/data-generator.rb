@@ -62,7 +62,7 @@ def generate_mappool(writeFile)
 end
 
 def generate_players(writeFile, race)
-  puts race+" players (enter 0 to end):"
+  puts race+" players (format TEAM--PLAYER; enter 0 to end):"
   player = "1"
   case race
   when "Protoss"

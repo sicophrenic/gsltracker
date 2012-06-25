@@ -1,4 +1,5 @@
 Gsltracker::Application.routes.draw do
+  # Devise
   devise_for :users
 
   # The priority is based upon order of creation:
@@ -16,6 +17,15 @@ Gsltracker::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :tournaments
+  resources :rounds
+  resources :groups
+  resources :matches
+  resources :games
+  resources :mappools
+  resources :maps
+  resources :players
+  resources :participants
 
   # Sample resource route with options:
   #   resources :products do
