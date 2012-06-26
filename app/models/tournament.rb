@@ -1,9 +1,10 @@
 class Tournament < ActiveRecord::Base
-  attr_accessible :season, :type, :year, :banner, :mappool_id
+  attr_accessible :season, :type, :year, :banner
   
-  validates :season, :presence => true
-  validates :type, :presence => true, :inclusion => { :in => %q[GSL GSTL] }
   validates :year, :presence => true
+  validates :league, :presence => true, :inclusion => { :in => %q[GSL GSTL] }
+  validates :season, :presence => true
+  validates :banner, :presence => true
   
   has_one :mappool
   has_many :rounds, :limit => 5

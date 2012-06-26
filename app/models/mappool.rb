@@ -1,7 +1,4 @@
-class Mappool < ActiveRecord::Base
-  attr_accessible :tournament_id
-  
-  validates :tournament_id, :presence => true
-  
+class Mappool < ActiveRecord::Base  
   belongs_to :tournament
+  has_many :maps
 end

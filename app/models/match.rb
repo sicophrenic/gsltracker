@@ -1,9 +1,8 @@
-class Match < ActiveRecord::Base
-  attr_accessible :game_id, :player_id
-  
+class Match < ActiveRecord::Base  
   belongs_to :group
   belongs_to :round
   
-  has_many :players, :limit => 2
+  has_many :participants
+  has_many :players, :through => :participants, :limit => 2
   has_many :games, :limit => 7
 end

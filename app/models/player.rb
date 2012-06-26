@@ -3,8 +3,6 @@ class Player < ActiveRecord::Base
   
   validates :name, :presence => true
   
-  belongs_to :game
-  
-  has_many :rounds
-  has_many :rounds, :through => :participants
+  has_many :participants
+  has_many :matches, :through => :participants
 end

@@ -1,9 +1,11 @@
 class Participant < ActiveRecord::Base
-  attr_accessible :player_id, :round_id
+  attr_accessible :race, :team
   
   validates :player_id, :presence => true
-  validates :round_id, :presence => true
+  validates :match_id, :presence => true
+  validates :race, :presence => true
+  validates :team, :presence => true
   
   belongs_to :player
-  belongs_to :round
+  belongs_to :match
 end

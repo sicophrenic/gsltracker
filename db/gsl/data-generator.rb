@@ -68,19 +68,19 @@ def generate_players(writeFile, race)
   when "Protoss"
 		writeFile.write("\t<protoss>")
 		while player = gets.gsub("\n","") and player != "0" do
-			writeFile.write(player+"|")
+			writeFile.write(race+"~"+player+"|")
 		end
 		writeFile.write("</protoss>\n")
   when "Terran"
 		writeFile.write("\t<terran>")
 		while player = gets.gsub("\n","") and player != "0" do
-			writeFile.write(player+"|")
+			writeFile.write(race+"~"+player+"|")
 		end
 		writeFile.write("</terran>\n")
   when "Zerg"
 		writeFile.write("\t<zerg>")
 		while player = gets.gsub("\n","") and player != "0" do
-			writeFile.write(player+"|")
+			writeFile.write(race+"~"+player+"|")
 		end
 		writeFile.write("</zerg>\n")		
   end

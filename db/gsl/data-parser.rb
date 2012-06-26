@@ -52,7 +52,7 @@ def parse_data(path)
 		current = "group"+letter
 		ro32.match(/<#{current}>(.*)<\/#{current}>/)
 		group = $1
-		matches = parse_group(group, "ro32")
+		matches = parse_group(players, group, "ro32")
 		ro32_groups[current] = matches
 	end
 
@@ -64,7 +64,7 @@ def parse_data(path)
   	current = "group"+letter
   	ro16.match(/<#{current}>(.*)<\/#{current}>/)
   	group = $1
-  	matches = parse_group(group, "ro16")
+  	matches = parse_group(players, group, "ro16")
   	ro16_groups[current] = matches
   end
   
@@ -72,21 +72,21 @@ def parse_data(path)
   contents.match(/<ro8>(.*)<\/ro8>/)
   ro8 = $1
   ro8_matches = {}
-  matches = parse_group(ro8, "ro8")
+  matches = parse_group(players, ro8, "ro8")
   ro8_matches["matches"] = matches
   
   # RO4
   contents.match(/<ro4>(.*)<\/ro4>/)
   ro4 = $1
   ro4_matches = {}
-  matches = parse_group(ro4, "ro4")
+  matches = parse_group(players, ro4, "ro4")
   ro4_matches["matches"] = matches
   
   # RO2
   contents.match(/<ro2>(.*)<\/ro2>/)
   ro2 = $1
   ro2_matches = {}
-  finalset = parse_group(ro2, "ro2")
+  finalset = parse_group(players, ro2, "ro2")
   ro2_matches["match1"] = finalset
   
   tournament["ro32"] = ro32_groups
@@ -98,7 +98,7 @@ def parse_data(path)
   pp tournament
 end
 
-def parse_group(data, round)
+def parse_group(players, data, round)
 	matches = {}
 	matches["round"] = round
 	if round ==  "ro32" || round == "ro16"
