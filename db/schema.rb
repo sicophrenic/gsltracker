@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20120625210730) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "mappools", :force => true do |t|
+  create_table "map_pools", :force => true do |t|
     t.integer  "tournament_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false

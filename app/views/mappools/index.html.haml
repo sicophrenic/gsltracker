@@ -1,4 +1,4 @@
-<h1>Listing mappools</h1>
+<h1>Listing map_pools</h1>
 
 <table>
   <tr>
@@ -7,15 +7,15 @@
     <th></th>
   </tr>
 
-<% @mappools.each do |mappool| %>
+<% @map_pools.each do |map_pool| %>
   <tr>
-    <td><%= link_to 'Show', mappool %></td>
-    <td><%= link_to 'Edit', edit_mappool_path(mappool) %></td>
-    <td><%= link_to 'Destroy', mappool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', map_pool %></td>
+    <td><%= link_to 'Edit', edit_map_pool_path(map_pool) %></td>
+    <td><%= link_to 'Destroy', map_pool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Mappool', new_mappool_path %>
+<%= link_to 'New MapPool', new_map_pool_path %>

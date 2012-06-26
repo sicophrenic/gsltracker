@@ -6,6 +6,6 @@ class Tournament < ActiveRecord::Base
   validates :season, :presence => true
   validates :banner, :presence => true
   
-  has_one :mappool
+  belongs_to :map_pool
   has_many :rounds, :limit => 5
 end

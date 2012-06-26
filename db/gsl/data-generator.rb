@@ -9,7 +9,7 @@ def generate_tournament
   generate_banner(writeFile)
   
   # MAP POOL
-  generate_mappool(writeFile)
+  generate_map_pool(writeFile)
   
   # CODE S
   puts "Now starts Code S"
@@ -50,7 +50,7 @@ def generate_banner(writeFile)
   writeFile.write("\n")
 end
 
-def generate_mappool(writeFile)
+def generate_map_pool(writeFile)
   puts "Map Pool (enter 0 to end):"
   map = "1"
   writeFile.write("<map_pool>\n")

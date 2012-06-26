@@ -1,44 +1,44 @@
-class MappoolsController < ApplicationController
+class MapPoolsController < ApplicationController
   def index
-    @mappools = Mappool.all
+    @map_pools = MapPool.all
   end
 
   def show
-    @mappool = Mappool.find(params[:id])
+    @map_pool = MapPool.find(params[:id])
   end
 
   def new
-    @mappool = Mappool.new
+    @map_pool = MapPool.new
   end
 
   def edit
-    @mappool = Mappool.find(params[:id])
+    @map_pool = MapPool.find(params[:id])
   end
 
   def create
-    @mappool = Mappool.new(params[:mappool])
+    @map_pool = MapPool.new(params[:map_pool])
 
-    if @mappool.save
-      redirect_to @mappool, notice: 'Mappool was successfully created.'
+    if @map_pool.save
+      redirect_to @map_pool, notice: 'MapPool was successfully created.'
     else
       render action: "new"
     end
   end
 
   def update
-    @mappool = Mappool.find(params[:id])
+    @map_pool = MapPool.find(params[:id])
 
-    if @mappool.update_attributes(params[:mappool])
-      redirect_to @mappool, notice: 'Mappool was successfully updated.'
+    if @map_pool.update_attributes(params[:map_pool])
+      redirect_to @map_pool, notice: 'MapPool was successfully updated.'
     else
       render action: "edit"
     end
   end
 
   def destroy
-    @mappool = Mappool.find(params[:id])
-    @mappool.destroy
+    @map_pool = MapPool.find(params[:id])
+    @map_pool.destroy
 
-    redirect_to mappools_url
+    redirect_to map_pools_url
   end
 end

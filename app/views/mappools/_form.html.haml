@@ -1,10 +1,10 @@
-<%= form_for(@mappool) do |f| %>
-  <% if @mappool.errors.any? %>
+<%= form_for(@map_pool) do |f| %>
+  <% if @map_pool.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@mappool.errors.count, "error") %> prohibited this mappool from being saved:</h2>
+      <h2><%= pluralize(@map_pool.errors.count, "error") %> prohibited this map_pool from being saved:</h2>
 
       <ul>
-      <% @mappool.errors.full_messages.each do |msg| %>
+      <% @map_pool.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

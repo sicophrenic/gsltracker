@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class MappoolsControllerTest < ActionController::TestCase
+class MapPoolsControllerTest < ActionController::TestCase
   setup do
-    @mappool = mappools(:one)
+    @map_pool = map_pools(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:mappools)
+    assert_not_nil assigns(:map_pools)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class MappoolsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create mappool" do
-    assert_difference('Mappool.count') do
-      post :create, mappool: {  }
+  test "should create map_pool" do
+    assert_difference('MapPool.count') do
+      post :create, map_pool: {  }
     end
 
-    assert_redirected_to mappool_path(assigns(:mappool))
+    assert_redirected_to map_pool_path(assigns(:map_pool))
   end
 
-  test "should show mappool" do
-    get :show, id: @mappool
+  test "should show map_pool" do
+    get :show, id: @map_pool
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @mappool
+    get :edit, id: @map_pool
     assert_response :success
   end
 
-  test "should update mappool" do
-    put :update, id: @mappool, mappool: {  }
-    assert_redirected_to mappool_path(assigns(:mappool))
+  test "should update map_pool" do
+    put :update, id: @map_pool, map_pool: {  }
+    assert_redirected_to map_pool_path(assigns(:map_pool))
   end
 
-  test "should destroy mappool" do
-    assert_difference('Mappool.count', -1) do
-      delete :destroy, id: @mappool
+  test "should destroy map_pool" do
+    assert_difference('MapPool.count', -1) do
+      delete :destroy, id: @map_pool
     end
 
-    assert_redirected_to mappools_path
+    assert_redirected_to map_pools_path
   end
 end

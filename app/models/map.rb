@@ -3,5 +3,5 @@ class Map < ActiveRecord::Base
   
   validates :name, :presence => true
   
-  belongs_to :mappool
+  belongs_to :map_pool
 end

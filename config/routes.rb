@@ -22,7 +22,7 @@ Gsltracker::Application.routes.draw do
   resources :groups
   resources :matches
   resources :games
-  resources :mappools
+  resources :map_pools
   resources :maps
   resources :players
   resources :participants

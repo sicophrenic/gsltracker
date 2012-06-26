@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class MappoolsHelperTest < ActionView::TestCase
+class MapPoolsHelperTest < ActionView::TestCase
 end

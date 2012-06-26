@@ -1,7 +1,7 @@
 TOURNAMENT
   league
   banner
-  {mappool}
+  {map_pool}
   {player(S)}
   {ro32}
   {ro16}

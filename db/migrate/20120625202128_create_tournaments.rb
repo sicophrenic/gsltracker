@@ -5,6 +5,8 @@ class CreateTournaments < ActiveRecord::Migration
       t.string :league
       t.integer :season
       t.string :banner
+      
+      t.integer :map_pool_id
 
       t.timestamps
     end

@@ -1,2 +1,2 @@
-module MappoolsHelper
+module MapPoolsHelper
 end
