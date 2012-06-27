@@ -9,7 +9,6 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-
   end
 
   def edit
@@ -41,6 +40,5 @@ class GroupsController < ApplicationController
     @group.destroy
 
     redirect_to groups_url
-    end
   end
 end

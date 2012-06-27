@@ -1,25 +1,2 @@
-<h1>Listing participants</h1>
-
-<table>
-  <tr>
-    <th>Player</th>
-    <th>Round</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @participants.each do |participant| %>
-  <tr>
-    <td><%= participant.player_id %></td>
-    <td><%= participant.round_id %></td>
-    <td><%= link_to 'Show', participant %></td>
-    <td><%= link_to 'Edit', edit_participant_path(participant) %></td>
-    <td><%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Participant', new_participant_path %>
+%h1 Participants#Index
+Incomplete view.

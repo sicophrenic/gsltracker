@@ -1,6 +1,4 @@
 class MapsController < ApplicationController
-  before_filter :require_admin
-  
   def index
     @maps = Map.all
   end
@@ -43,12 +41,4 @@ class MapsController < ApplicationController
 
     redirect_to maps_url
   end
-  
-  private
-    def require_admin
-      unless user_signed_in? && current_user.admin?
-        flash[:error] = "You must be an admin to access this feature."
-        redirect_to root_path
-      end
-    end
 end
