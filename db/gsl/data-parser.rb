@@ -39,9 +39,18 @@ def parse_data(path)
 	contents.match(/<zerg>(.*)<\/zerg>/)
 	zerg = $1.split("|")
 	players = {}
-  players["p"] = protoss
-  players["t"] = terran
-  players["z"] = zerg
+	protoss.each do |player|
+	  playerName = player.split('~')[2]
+	  players[playerName] = player
+  end
+	terran.each do |player|
+	  playerName = player.split('~')[2]
+	  players[playerName] = player
+  end
+	zerg.each do |player|
+	  playerName = player.split('~')[2]
+	  players[playerName] = player
+  end
 	tournament["players"] = players
 	
 	# RO32
@@ -109,10 +118,9 @@ def parse_group(players, data, round)
 		player1 = $1
 		match.match(/<player2>(.*)<\/player2>/)	
 		player2 = $1
-		games = parse_games(match, round)
+		games = parse_games(players, match, round)
 		match1 = {}
-		match1["p1"] = player1
-		match1["p2"] = player2
+		match1["players"] = [] << players[player1] << players[player2]
 		match1["bo3"] = games
 		matches["match1"] = match1
 		# Match 2
@@ -122,10 +130,9 @@ def parse_group(players, data, round)
 		player1 = $1
 		match.match(/<player2>(.*)<\/player2>/)	
 		player2 = $1
-		games = parse_games(match, round)
+		games = parse_games(players, match, round)
 		match2 = {}
-		match2["p1"] = player1
-		match2["p2"] = player2
+		match2["players"] = [] << players[player1] << players[player2]
 		match2["bo3"] = games
 		matches["match2"] = match2
 		# Winners
@@ -135,10 +142,9 @@ def parse_group(players, data, round)
 		player1 = $1
 		match.match(/<player2>(.*)<\/player2>/)	
 		player2 = $1
-		games = parse_games(match, round)
+		games = parse_games(players, match, round)
 		winners = {}
-		winners["p1"] = player1
-		winners["p2"] = player2
+		winners["players"] = [] << players[player1] << players[player2]
 		winners["bo3"] = games
 		matches["winners"] = winners
 		# Losers
@@ -148,10 +154,9 @@ def parse_group(players, data, round)
 		player1 = $1
 		match.match(/<player2>(.*)<\/player2>/)	
 		player2 = $1
-		games = parse_games(match, round)
+		games = parse_games(players, match, round)
 		losers = {}
-		losers["p1"] = player1
-		losers["p2"] = player2
+		losers["players"] = [] << players[player1] << players[player2]
 		losers["bo3"] = games
 		matches["losers"] = losers
 		# Tiebreak
@@ -161,10 +166,9 @@ def parse_group(players, data, round)
 		player1 = $1
 		match.match(/<player2>(.*)<\/player2>/)	
 		player2 = $1
-		games = parse_games(match, round)
+		games = parse_games(players, match, round)
 		tiebreak = {}
-		tiebreak["p1"] = player1
-		tiebreak["p2"] = player2
+		tiebreak["players"] = [] << players[player1] << players[player2]
 		tiebreak["bo3"] = games
 		matches["tiebreak"] = tiebreak
 	end
@@ -176,10 +180,9 @@ def parse_group(players, data, round)
 	  player1 = $1
 	  match.match(/<player2>(.*)<\/player2>/)
 	  player2 = $1
-	  games = parse_games(match, round)
+	  games = parse_games(players, match, round)
 	  match1 = {}
-	  match1["p1"] = player1
-	  match1["p2"] = player2
+		match1["players"] = [] << players[player1] << players[player2]
 	  match1["bo5"] = games
 	  matches["match1"] = match1
 	  # Match 2
@@ -189,10 +192,9 @@ def parse_group(players, data, round)
     player1 = $1
     match.match(/<player2>(.*)<\/player2>/)
     player2 = $1
-    games = parse_games(match, round)
+    games = parse_games(players, match, round)
     match2 = {}
-    match2["p1"] = player1
-    match2["p2"] = player2
+		match2["players"] = [] << players[player1] << players[player2]
     match2["bo5"] = games
     matches["match2"] = match2
 	  # Match 3
@@ -202,10 +204,9 @@ def parse_group(players, data, round)
     player1 = $1
     match.match(/<player2>(.*)<\/player2>/)
     player2 = $1
-    games = parse_games(match, round)
+    games = parse_games(players, match, round)
     match3 = {}
-    match3["p1"] = player1
-    match3["p2"] = player2
+		match3["players"] = [] << players[player1] << players[player2]
     match3["bo5"] = games
     matches["match3"] = match3
 	  # Match 4
@@ -215,10 +216,9 @@ def parse_group(players, data, round)
     player1 = $1
     match.match(/<player2>(.*)<\/player2>/)
     player2 = $1
-    games = parse_games(match, round)
+    games = parse_games(players, match, round)
     match4 = {}
-    match4["p1"] = player1
-    match4["p2"] = player2
+		match4["players"] = [] << players[player1] << players[player2]
     match4["bo5"] = games
     matches["match4"] = match4
   end
@@ -230,10 +230,9 @@ def parse_group(players, data, round)
 	  player1 = $1
 	  match.match(/<player2>(.*)<\/player2>/)
 	  player2 = $1
-	  games = parse_games(match, round)
+	  games = parse_games(players, match, round)
 	  match1 = {}
-	  match1["p1"] = player1
-	  match1["p2"] = player2
+		match1["players"] = [] << players[player1] << players[player2]
 	  match1["bo5"] = games
 	  matches["match1"] = match1
 	  # Match 2
@@ -243,10 +242,9 @@ def parse_group(players, data, round)
 	  player1 = $1
 	  match.match(/<player2>(.*)<\/player2>/)
 	  player2 = $1
-	  games = parse_games(match, round)
+	  games = parse_games(players, match, round)
 	  match2 = {}
-	  match2["p1"] = player1
-	  match2["p2"] = player2
+		match2["players"] = [] << players[player1] << players[player2]
 	  match2["bo5"] = games
 	  matches["match2"] = match2
   end
@@ -258,17 +256,16 @@ def parse_group(players, data, round)
 	  player1 = $1
 	  match.match(/<player2>(.*)<\/player2>/)
 	  player2 = $1
-	  games = parse_games(match, round)
+	  games = parse_games(players, match, round)
 	  final = {}
-	  final["p1"] = player1
-	  final["p2"] = player2
+		final["players"] = [] << players[player1] << players[player2]
 	  final["bo7"] = games
 	  matches["finals"] = final
 	end
 	matches
 end
 
-def parse_games(data, round)
+def parse_games(players, data, round)
 	games = {}
 	# Game 1
 	data.match(/<game1>(.*)<\/game1>/)
@@ -279,7 +276,7 @@ def parse_games(data, round)
 	winner = $1
 	game1 = {}
 	game1["map"] = map
-	game1["winner"] = winner
+	game1["winner"] = players[winner]
 	games["game1"] = game1
 	# Game 2
 	data.match(/<game2>(.*)<\/game2>/)
@@ -290,7 +287,7 @@ def parse_games(data, round)
 	winner = $1
 	game2 = {}
 	game2["map"] = map
-	game2["winner"] = winner
+	game2["winner"] = players[winner]
 	games["game2"] = game2
 	# Game 3
 	data.match(/<game3>(.*)<\/game3>/)
@@ -301,7 +298,7 @@ def parse_games(data, round)
 	winner = $1
 	game3 = {}
 	game3["map"] = map
-	game3["winner"] = winner
+	game3["winner"] = players[winner]
 	games["game3"] = game3
 	if round == "ro32" || round == "ro16"
 	  # do nothing, no more than three games per match
@@ -316,7 +313,7 @@ def parse_games(data, round)
   	winner = $1
   	game4 = {}
   	game4["map"] = map
-  	game4["winner"] = winner
+  	game4["winner"] = players[winner]
   	games["game4"] = game4
   	# Game 5
   	data.match(/<game5>(.*)<\/game5>/)
@@ -327,7 +324,7 @@ def parse_games(data, round)
   	winner = $1
   	game5 = {}
   	game5["map"] = map
-  	game5["winner"] = winner
+  	game5["winner"] = players[winner]
   	games["game5"] = game5
 	  if round == "ro2"
     	# Game 6
@@ -339,7 +336,7 @@ def parse_games(data, round)
     	winner = $1
     	game6 = {}
     	game6["map"] = map
-    	game6["winner"] = winner
+    	game6["winner"] = players[winner]
     	games["game6"] = game6
     	# Game 7
     	data.match(/<game7>(.*)<\/game7>/)
@@ -350,7 +347,7 @@ def parse_games(data, round)
     	winner = $1
     	game7 = {}
     	game7["map"] = map
-    	game7["winner"] = winner
+    	game7["winner"] = players[winner]
     	games["game7"] = game7
   	end
 	end

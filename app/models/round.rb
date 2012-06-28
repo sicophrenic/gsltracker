@@ -5,6 +5,9 @@ class Round < ActiveRecord::Base
   
   belongs_to :tournament
   
+  has_many :players, :through => :participants
+  has_many :participants, :as => :advances
+  has_many :players, :through => :participants
   has_many :groups, :limit => 8
   has_many :matches, :limit => 4
 end

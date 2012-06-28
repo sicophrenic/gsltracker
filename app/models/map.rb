@@ -3,5 +3,7 @@ class Map < ActiveRecord::Base
   
   validates :name, :presence => true
   
-  belongs_to :map_pool
+  has_and_belongs_to_many :map_pool
+  has_many :map_assignments
+  has_many :games, :through => :map_assignments
 end

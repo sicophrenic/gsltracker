@@ -7,5 +7,8 @@ class Tournament < ActiveRecord::Base
   validates :banner, :presence => true
   
   belongs_to :map_pool
+  
   has_many :rounds, :limit => 5
+  has_many :registrations
+  has_many :players, :through => :registrations
 end

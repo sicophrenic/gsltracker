@@ -11,12 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625210730) do
+ActiveRecord::Schema.define(:version => 20120628084318) do
+
+  create_table "game_participants", :force => true do |t|
+    t.integer  "player_id"
+    t.integer  "game_id"
+    t.string   "race"
+    t.string   "team"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "games", :force => true do |t|
     t.integer  "match_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "map_assignment_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "groups", :force => true do |t|
@@ -25,10 +35,21 @@ ActiveRecord::Schema.define(:version => 20120625210730) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "map_pools", :force => true do |t|
-    t.string   "name"
+  create_table "map_assignments", :force => true do |t|
+    t.integer  "game_id"
+    t.integer  "map_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "map_pools", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "map_pools_maps", :force => true do |t|
+    t.integer "map_pool_id"
+    t.integer "map_id"
   end
 
   create_table "maps", :force => true do |t|
@@ -46,17 +67,23 @@ ActiveRecord::Schema.define(:version => 20120625210730) do
 
   create_table "participants", :force => true do |t|
     t.integer  "player_id"
-    t.integer  "match_id"
-    t.string   "race"
-    t.string   "team"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "advances_id"
+    t.string   "advances_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "players", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "registrations", :force => true do |t|
+    t.integer  "player_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "rounds", :force => true do |t|

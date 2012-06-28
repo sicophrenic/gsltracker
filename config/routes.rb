@@ -24,8 +24,11 @@ Gsltracker::Application.routes.draw do
   resources :games
   resources :map_pools
   resources :maps
+  resources :map_assignments
   resources :players
+  resources :registrations
   resources :participants
+  resources :game_participants
 
   # Sample resource route with options:
   #   resources :products do

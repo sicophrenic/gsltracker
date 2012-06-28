@@ -1,0 +1,2 @@
+module GameParticipantsHelper
+end
