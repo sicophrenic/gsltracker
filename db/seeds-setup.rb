@@ -1,3 +1,111 @@
+def fill_game(matchdata, gameno)
+	gameid = "game"+gameno.to_s
+	if matchdata[gameid]["map"] != ""
+		game = Game.new
+		game.map = Map.find_by_name(matchdata[gameid]["map"])
+		part = GameParticipant.new
+		playerinfo = matchdata[gameid]["winner"].split('~')
+		part.race = playerinfo[0]
+		part.team = playerinfo[1]
+		part.game = gamepart.player = Player.find_by_name(playerinfo[2])
+		game
+	else
+		game = nil
+	end
+	game
+end
+
+def fill_matches(groupdata, type)
+	case type
+	when "groupmatches"
+		### Match1
+		match1 = Match.new
+		tempmatch = groupdata["match1"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+			matchplayers << p
+			@groupplayers << p
+			@roundplayers << p
+		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		match1.games << game1 << game2 << game3
+		match1.players = matchplayers
+		### Match2
+		match2 = Match.new
+		tempmatch = groupdata["match2"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+			matchplayers << p
+			@groupplayers << p
+			@roundplayers << p
+		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		match1.games << game1 << game2 << game3
+		match1.players = matchplayers
+		### Winners
+		winners = Match.new
+		tempmatch = groupdata["winners"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+			matchplayers << p
+			@groupplayers << p
+			@roundplayers << p
+		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		match1.games << game1 << game2 << game3
+		match1.players = matchplayers
+		### Losers
+		losers = Match.new
+		tempmatch = groupdata["losers"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+			matchplayers << p
+			@groupplayers << p
+			@roundplayers << p
+		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		match1.games << game1 << game2 << game3
+		match1.players = matchplayers
+		### Tiebreak
+		tiebreak = Match.new
+		tempmatch = groupdata["tiebreak"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+			matchplayers << p
+			@groupplayers << p
+			@roundplayers << p
+		end
+		matches = [] << match1 << match2 << winners << losers << tiebreak
+	when "regularmatches"
+	end
+	matches
+end
+
+def fill_groups(rounddata, groupno)
+	groupid = "group"+groupno
+	group = Group.new
+	tempgroup = rounddata[groupid]
+	@groupplayers = []
+	matches = fill_matches(tempgroup, "groupmatches")
+	matches.each do |match|
+		group.matches << match
+	end
+	group.players = @groupplayers
+	group
+end
+
 #####   DATA-GENERATE   #####
 def generate_tournament
   puts "Welcome to the GSL Tournament data generator script!"
@@ -719,52 +827,65 @@ player.tournaments << tournament
 end
 
 # Generate RO32
+# RO32
 ro32 = Round.new(:roundof => "RO32")
-ro32players = []
-groupA = Group.new
-temp = data["ro32"]["groupA"]
-match1 = Match.new
-game1 = Game.new
-game2 = Game.new
-game3 = Game.new
-match2 = Match.new
-winners = Match.new
-losers = Match.new
-tiebreak = Match.new
-groupB = Group.new
-temp = data["ro32"]["groupB"]
-groupC = Group.new
-temp = data["ro32"]["groupC"]
-groupD = Group.new
-temp = data["ro32"]["groupD"]
-groupE = Group.new
-temp = data["ro32"]["groupE"]
-groupF = Group.new
-temp = data["ro32"]["groupF"]
-groupG = Group.new
-temp = data["ro32"]["groupG"]
-groupH = Group.new
-temp = data["ro32"]["groupH"]
+@roundplayers = []
+rounddata = data["ro32"]
+## GroupA
+groupA = fill_groups(rounddata, "A")
+ro32.groups << groupA
+## GroupB
+groupB = fill_groups(rounddata, "B")
+ro32.groups << groupB
+## GroupC
+groupA = fill_groups(rounddata, "C")
+ro32.groups << groupC
+## GroupD
+groupA = fill_groups(rounddata, "D")
+ro32.groups << groupD
+## GroupE
+groupA = fill_groups(rounddata, "E")
+ro32.groups << groupE
+## GroupF
+groupA = fill_groups(rounddata, "F")
+ro32.groups << groupF
+## GroupG
+groupA = fill_groups(rounddata, "G")
+ro32.groups << groupG
+## GroupH
+groupA = fill_groups(rounddata, "H")
+ro32.groups << groupH
+ro32.players = @roundplayers
 
 # Generate RO16
 ro16 = Round.new(:roundof => "RO16")
-ro16players = []
-groupA = Group.new
-groupB = Group.new
-groupC = Group.new
-groupD = Group.new
+@roundplayers = []
+rounddata = data["ro16"]
+## GroupA
+groupA = fill_groups(rounddata, "A")
+ro16.groups << groupA
+## GroupB
+groupB = fill_groups(rounddata, "B")
+ro16.groups << groupB
+## GroupC
+groupA = fill_groups(rounddata, "C")
+ro16.groups << groupC
+## GroupD
+groupA = fill_groups(rounddata, "D")
+ro16.groups << groupD
+ro16.players = @roundplayers
 
-# Generate RO8
-ro8 = Round.new(:roundof => "RO8")
-ro8players = []
+# # Generate RO8
+# ro8 = Round.new(:roundof => "RO8")
+# ro8players = []
 
-# Generate RO4
-ro4 = Round.new(:roundof => "RO4")
-ro4players = []
+# # Generate RO4
+# ro4 = Round.new(:roundof => "RO4")
+# ro4players = []
 
-# Generate RO2
-ro2 = Round.new(:roundof => "RO2")
-ro2players = []
+# # Generate RO2
+# ro2 = Round.new(:roundof => "RO2")
+# ro2players = []
 
 tournament.save
 #####     DATA-SEED     #####
