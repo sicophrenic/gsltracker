@@ -7,7 +7,7 @@ def fill_game(matchdata, gameno)
 		playerinfo = matchdata[gameid]["winner"].split('~')
 		part.race = playerinfo[0]
 		part.team = playerinfo[1]
-		part.game = gamepart.player = Player.find_by_name(playerinfo[2])
+		part.game = game
 		game
 	else
 		game = nil
@@ -23,6 +23,7 @@ def fill_matches(groupdata, type)
 		tempmatch = groupdata["match1"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
+		  p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
 			@groupplayers << p
 			@roundplayers << p
@@ -31,13 +32,17 @@ def fill_matches(groupdata, type)
 		game1 = fill_game(matchgames, 1)
 		game2 = fill_game(matchgames, 2)
 		game3 = fill_game(matchgames, 3)
-		match1.games << game1 << game2 << game3
+		match1.games << game1 << game2
+		if game3 != nil
+		  match1.games << game3
+	  end
 		match1.players = matchplayers
 		### Match2
 		match2 = Match.new
 		tempmatch = groupdata["match2"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
+		  p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
 			@groupplayers << p
 			@roundplayers << p
@@ -46,47 +51,62 @@ def fill_matches(groupdata, type)
 		game1 = fill_game(matchgames, 1)
 		game2 = fill_game(matchgames, 2)
 		game3 = fill_game(matchgames, 3)
-		match1.games << game1 << game2 << game3
-		match1.players = matchplayers
+		match2.games << game1 << game2
+		if game3 != nil
+		  match2.games << game3
+	  end
+		match2.players = matchplayers
 		### Winners
 		winners = Match.new
 		tempmatch = groupdata["winners"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
+		  p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
-			@groupplayers << p
-			@roundplayers << p
 		end
 		matchgames = tempmatch["bo3"]
 		game1 = fill_game(matchgames, 1)
 		game2 = fill_game(matchgames, 2)
 		game3 = fill_game(matchgames, 3)
-		match1.games << game1 << game2 << game3
-		match1.players = matchplayers
+		winners.games << game1 << game2
+		if game3 != nil
+		  winners.games << game3
+	  end
+		winners.players = matchplayers
 		### Losers
 		losers = Match.new
 		tempmatch = groupdata["losers"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
+		  p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
-			@groupplayers << p
-			@roundplayers << p
 		end
 		matchgames = tempmatch["bo3"]
 		game1 = fill_game(matchgames, 1)
 		game2 = fill_game(matchgames, 2)
 		game3 = fill_game(matchgames, 3)
-		match1.games << game1 << game2 << game3
-		match1.players = matchplayers
+		losers.games << game1 << game2
+		if game3 != nil
+		  losers.games << game3
+	  end
+		losers.players = matchplayers
 		### Tiebreak
 		tiebreak = Match.new
 		tempmatch = groupdata["tiebreak"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
+		  p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
-			@groupplayers << p
-			@roundplayers << p
 		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		tiebreak.games << game1 << game2
+		if game3 != nil
+		  tiebreak.games << game3
+	  end
+	  tiebreak.players = matchplayers
 		matches = [] << match1 << match2 << winners << losers << tiebreak
 	when "regularmatches"
 	end
@@ -817,6 +837,7 @@ data["maps"].each do |map|
 Map.create(:name => map)
 end
 mappool.maps << Map.all
+tournament.map_pool = mappool
 
 # Generate Players
 data["players"].each do |name,raceteamname|

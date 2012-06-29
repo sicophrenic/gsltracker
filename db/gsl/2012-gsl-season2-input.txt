@@ -57,7 +57,7 @@ TheStC
 TaeJa
 Jjakji
 Atlantis Spaceship
-Taeja
+TaeJa
 Entombed Valley
 Jjakji
 Antiga Shipyard
@@ -372,7 +372,7 @@ NaNiwa
 Antiga Shipyard
 NaNiwa
 ESV Ohana
-Naniwa
+NaNiwa
 
 
 SuperNoVa

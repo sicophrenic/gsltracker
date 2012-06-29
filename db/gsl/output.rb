@@ -57,7 +57,8 @@
      "match2"=>
       {"players"=>["Terran~Liquid~TaeJa", "Terran~NSH~Jjakji"],
        "bo3"=>
-        {"game1"=>{"map"=>"Atlantis Spaceship", "winner"=>nil},
+        {"game1"=>
+          {"map"=>"Atlantis Spaceship", "winner"=>"Terran~Liquid~TaeJa"},
          "game2"=>{"map"=>"Entombed Valley", "winner"=>"Terran~NSH~Jjakji"},
          "game3"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~NSH~Jjakji"}}},
      "winners"=>
@@ -320,7 +321,7 @@
        "bo3"=>
         {"game1"=>
           {"map"=>"Antiga Shipyard", "winner"=>"Protoss~Quantic~NaNiwa"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>nil},
+         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~Quantic~NaNiwa"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "match2"=>
       {"players"=>["Terran~oGs~SuperNoVa", "Terran~StarTale~Virus"],
