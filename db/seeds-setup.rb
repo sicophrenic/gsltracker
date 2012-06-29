@@ -8,7 +8,8 @@ def fill_game(matchdata, gameno)
 		part.race = playerinfo[0]
 		part.team = playerinfo[1]
 		part.game = game
-		game
+		part.player = Player.find_by_name(playerinfo[2])
+		part.save
 	else
 		game = nil
 	end
@@ -23,7 +24,7 @@ def fill_matches(groupdata, type)
 		tempmatch = groupdata["match1"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
-		  p = Player.find_by_name(p.split('~')[2])
+		 	p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
 			@groupplayers << p
 			@roundplayers << p
@@ -34,7 +35,7 @@ def fill_matches(groupdata, type)
 		game3 = fill_game(matchgames, 3)
 		match1.games << game1 << game2
 		if game3 != nil
-		  match1.games << game3
+		 	match1.games << game3
 	  end
 		match1.players = matchplayers
 		### Match2
@@ -42,7 +43,7 @@ def fill_matches(groupdata, type)
 		tempmatch = groupdata["match2"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
-		  p = Player.find_by_name(p.split('~')[2])
+		 	p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
 			@groupplayers << p
 			@roundplayers << p
@@ -53,15 +54,15 @@ def fill_matches(groupdata, type)
 		game3 = fill_game(matchgames, 3)
 		match2.games << game1 << game2
 		if game3 != nil
-		  match2.games << game3
-	  end
+		 	match2.games << game3
+	  	end
 		match2.players = matchplayers
 		### Winners
 		winners = Match.new
 		tempmatch = groupdata["winners"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
-		  p = Player.find_by_name(p.split('~')[2])
+			p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
 		end
 		matchgames = tempmatch["bo3"]
@@ -70,15 +71,15 @@ def fill_matches(groupdata, type)
 		game3 = fill_game(matchgames, 3)
 		winners.games << game1 << game2
 		if game3 != nil
-		  winners.games << game3
-	  end
+			winners.games << game3
+	 	end
 		winners.players = matchplayers
 		### Losers
 		losers = Match.new
 		tempmatch = groupdata["losers"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
-		  p = Player.find_by_name(p.split('~')[2])
+		 	p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
 		end
 		matchgames = tempmatch["bo3"]
@@ -87,15 +88,15 @@ def fill_matches(groupdata, type)
 		game3 = fill_game(matchgames, 3)
 		losers.games << game1 << game2
 		if game3 != nil
-		  losers.games << game3
-	  end
+			losers.games << game3
+		end
 		losers.players = matchplayers
 		### Tiebreak
 		tiebreak = Match.new
 		tempmatch = groupdata["tiebreak"]
 		matchplayers = []
 		tempmatch["players"].each do |p|
-		  p = Player.find_by_name(p.split('~')[2])
+			p = Player.find_by_name(p.split('~')[2])
 			matchplayers << p
 		end
 		matchgames = tempmatch["bo3"]
@@ -104,9 +105,9 @@ def fill_matches(groupdata, type)
 		game3 = fill_game(matchgames, 3)
 		tiebreak.games << game1 << game2
 		if game3 != nil
-		  tiebreak.games << game3
-	  end
-	  tiebreak.players = matchplayers
+		 	tiebreak.games << game3
+		end
+	  	tiebreak.players = matchplayers
 		matches = [] << match1 << match2 << winners << losers << tiebreak
 	when "regularmatches"
 	end
@@ -859,24 +860,25 @@ ro32.groups << groupA
 groupB = fill_groups(rounddata, "B")
 ro32.groups << groupB
 ## GroupC
-groupA = fill_groups(rounddata, "C")
+groupC = fill_groups(rounddata, "C")
 ro32.groups << groupC
 ## GroupD
-groupA = fill_groups(rounddata, "D")
+groupD = fill_groups(rounddata, "D")
 ro32.groups << groupD
 ## GroupE
-groupA = fill_groups(rounddata, "E")
+groupE = fill_groups(rounddata, "E")
 ro32.groups << groupE
 ## GroupF
-groupA = fill_groups(rounddata, "F")
+groupF = fill_groups(rounddata, "F")
 ro32.groups << groupF
 ## GroupG
-groupA = fill_groups(rounddata, "G")
+groupG = fill_groups(rounddata, "G")
 ro32.groups << groupG
 ## GroupH
-groupA = fill_groups(rounddata, "H")
+groupH = fill_groups(rounddata, "H")
 ro32.groups << groupH
 ro32.players = @roundplayers
+tournament.rounds << ro32
 
 # Generate RO16
 ro16 = Round.new(:roundof => "RO16")
@@ -889,12 +891,13 @@ ro16.groups << groupA
 groupB = fill_groups(rounddata, "B")
 ro16.groups << groupB
 ## GroupC
-groupA = fill_groups(rounddata, "C")
+groupC = fill_groups(rounddata, "C")
 ro16.groups << groupC
 ## GroupD
-groupA = fill_groups(rounddata, "D")
+groupD = fill_groups(rounddata, "D")
 ro16.groups << groupD
 ro16.players = @roundplayers
+tournament.rounds << ro16
 
 # # Generate RO8
 # ro8 = Round.new(:roundof => "RO8")

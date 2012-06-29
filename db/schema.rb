@@ -24,9 +24,8 @@ ActiveRecord::Schema.define(:version => 20120628084318) do
 
   create_table "games", :force => true do |t|
     t.integer  "match_id"
-    t.integer  "map_assignment_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "groups", :force => true do |t|
