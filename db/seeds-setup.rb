@@ -1,136 +1,8 @@
-def fill_game(matchdata, gameno)
-	gameid = "game"+gameno.to_s
-	if matchdata[gameid]["map"] != ""
-		game = Game.new
-		game.map = Map.find_by_name(matchdata[gameid]["map"])
-		part = GameParticipant.new
-		playerinfo = matchdata[gameid]["winner"].split('~')
-		part.race = playerinfo[0]
-		part.team = playerinfo[1]
-		part.game = game
-		part.player = Player.find_by_name(playerinfo[2])
-		part.save
-	else
-		game = nil
-	end
-	game
-end
-
-def fill_matches(groupdata, type)
-	case type
-	when "groupmatches"
-		### Match1
-		match1 = Match.new
-		tempmatch = groupdata["match1"]
-		matchplayers = []
-		tempmatch["players"].each do |p|
-		 	p = Player.find_by_name(p.split('~')[2])
-			matchplayers << p
-			@groupplayers << p
-			@roundplayers << p
-		end
-		matchgames = tempmatch["bo3"]
-		game1 = fill_game(matchgames, 1)
-		game2 = fill_game(matchgames, 2)
-		game3 = fill_game(matchgames, 3)
-		match1.games << game1 << game2
-		if game3 != nil
-		 	match1.games << game3
-	  end
-		match1.players = matchplayers
-		### Match2
-		match2 = Match.new
-		tempmatch = groupdata["match2"]
-		matchplayers = []
-		tempmatch["players"].each do |p|
-		 	p = Player.find_by_name(p.split('~')[2])
-			matchplayers << p
-			@groupplayers << p
-			@roundplayers << p
-		end
-		matchgames = tempmatch["bo3"]
-		game1 = fill_game(matchgames, 1)
-		game2 = fill_game(matchgames, 2)
-		game3 = fill_game(matchgames, 3)
-		match2.games << game1 << game2
-		if game3 != nil
-		 	match2.games << game3
-	  	end
-		match2.players = matchplayers
-		### Winners
-		winners = Match.new
-		tempmatch = groupdata["winners"]
-		matchplayers = []
-		tempmatch["players"].each do |p|
-			p = Player.find_by_name(p.split('~')[2])
-			matchplayers << p
-		end
-		matchgames = tempmatch["bo3"]
-		game1 = fill_game(matchgames, 1)
-		game2 = fill_game(matchgames, 2)
-		game3 = fill_game(matchgames, 3)
-		winners.games << game1 << game2
-		if game3 != nil
-			winners.games << game3
-	 	end
-		winners.players = matchplayers
-		### Losers
-		losers = Match.new
-		tempmatch = groupdata["losers"]
-		matchplayers = []
-		tempmatch["players"].each do |p|
-		 	p = Player.find_by_name(p.split('~')[2])
-			matchplayers << p
-		end
-		matchgames = tempmatch["bo3"]
-		game1 = fill_game(matchgames, 1)
-		game2 = fill_game(matchgames, 2)
-		game3 = fill_game(matchgames, 3)
-		losers.games << game1 << game2
-		if game3 != nil
-			losers.games << game3
-		end
-		losers.players = matchplayers
-		### Tiebreak
-		tiebreak = Match.new
-		tempmatch = groupdata["tiebreak"]
-		matchplayers = []
-		tempmatch["players"].each do |p|
-			p = Player.find_by_name(p.split('~')[2])
-			matchplayers << p
-		end
-		matchgames = tempmatch["bo3"]
-		game1 = fill_game(matchgames, 1)
-		game2 = fill_game(matchgames, 2)
-		game3 = fill_game(matchgames, 3)
-		tiebreak.games << game1 << game2
-		if game3 != nil
-		 	tiebreak.games << game3
-		end
-	  	tiebreak.players = matchplayers
-		matches = [] << match1 << match2 << winners << losers << tiebreak
-	when "regularmatches"
-	end
-	matches
-end
-
-def fill_groups(rounddata, groupno)
-	groupid = "group"+groupno
-	group = Group.new
-	tempgroup = rounddata[groupid]
-	@groupplayers = []
-	matches = fill_matches(tempgroup, "groupmatches")
-	matches.each do |match|
-		group.matches << match
-	end
-	group.players = @groupplayers
-	group
-end
-
 #####   DATA-GENERATE   #####
 def generate_tournament
   puts "Welcome to the GSL Tournament data generator script!"
-  writeFile = File.open('gsl.html','r+')
+
+  writeFile = File.new('gsl.html','r+')
   
   # LEAGUE
   generate_league(writeFile)
@@ -474,7 +346,7 @@ def generate_game(writeFile)
   writeFile.write("\t\t\t</winner>\n")
 end
 generate_tournament
-#####   DATA-GENERATE   #####
+#####/  DATA-GENERATE   #####
 #############################
 #####   DATA-PARSER     #####
 def parse_data(path)
@@ -822,9 +694,262 @@ def parse_games(players, data, round)
 	games
 end
 data = parse_data('gsl.html')
-#####     DATA-PARSE    #####
+#####/    DATA-PARSE    #####
 #############################
 #####     DATA-SEED     #####
+########## HELPERS ##########
+def fill_game(matchdata, gameno)
+	gameid = "game"+gameno.to_s
+	if matchdata[gameid]["map"] != ""
+		game = Game.new
+		game.map = Map.find_by_name(matchdata[gameid]["map"])
+		part = GameParticipant.new
+		playerinfo = matchdata[gameid]["winner"].split('~')
+		part.race = playerinfo[0]
+		part.team = playerinfo[1]
+		part.game = game
+		part.player = Player.find_by_name(playerinfo[2])
+		part.save
+	else
+		game = nil
+	end
+	game
+end
+def fill_matches(input, type)
+	matches = []
+	case type
+	when "groupmatches"
+		### Match1
+		match1 = Match.new
+		tempmatch = input["match1"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+		 	p = Player.find_by_name(p.split('~')[2])
+			matchplayers << p
+			@groupplayers << p
+			@roundplayers << p
+		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		match1.games << game1 << game2
+		if game3 != nil
+		 	match1.games << game3
+	  end
+		match1.players = matchplayers
+		### Match2
+		match2 = Match.new
+		tempmatch = input["match2"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+		 	p = Player.find_by_name(p.split('~')[2])
+			matchplayers << p
+			@groupplayers << p
+			@roundplayers << p
+		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		match2.games << game1 << game2
+		if game3 != nil
+		 	match2.games << game3
+	  	end
+		match2.players = matchplayers
+		### Winners
+		winners = Match.new
+		tempmatch = input["winners"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+			p = Player.find_by_name(p.split('~')[2])
+			matchplayers << p
+		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		winners.games << game1 << game2
+		if game3 != nil
+			winners.games << game3
+	 	end
+		winners.players = matchplayers
+		### Losers
+		losers = Match.new
+		tempmatch = input["losers"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+		 	p = Player.find_by_name(p.split('~')[2])
+			matchplayers << p
+		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		losers.games << game1 << game2
+		if game3 != nil
+			losers.games << game3
+		end
+		losers.players = matchplayers
+		### Tiebreak
+		tiebreak = Match.new
+		tempmatch = input["tiebreak"]
+		matchplayers = []
+		tempmatch["players"].each do |p|
+			p = Player.find_by_name(p.split('~')[2])
+			matchplayers << p
+		end
+		matchgames = tempmatch["bo3"]
+		game1 = fill_game(matchgames, 1)
+		game2 = fill_game(matchgames, 2)
+		game3 = fill_game(matchgames, 3)
+		tiebreak.games << game1 << game2
+		if game3 != nil
+		 	tiebreak.games << game3
+		end
+	  	tiebreak.players = matchplayers
+		matches << match1 << match2 << winners << losers << tiebreak
+	when "regularmatches"
+		if input["round"] == "ro2"
+			# Match 1
+			match1 = Match.new
+			tempmatch = input["finals"]
+			matchgames = tempmatch["bo7"]
+			game1 = fill_game(matchgames, 1)
+			game2 = fill_game(matchgames, 2)
+			game3 = fill_game(matchgames, 3)
+			game4 = fill_game(matchgames, 4)
+			game5 = fill_game(matchgames, 5)
+			game6 = fill_game(matchgames, 6)
+			game7 = fill_game(matchgames, 7)
+			match1.games << game1 << game2 << game3 << game4
+			if game5 != nil
+				match1.games << game5
+				if game6 != nil
+					match1.games << game6
+					if game7 != nil
+						match1.games << game7
+					end
+				end
+			end
+		else
+			match1 = Match.new
+			tempmatch = input["match1"]
+			matchplayers = []
+			matchgames = tempmatch["bo5"]
+			game1 = fill_game(matchgames, 1)
+			game2 = fill_game(matchgames, 2)
+			game3 = fill_game(matchgames, 3)
+			game4 = fill_game(matchgames, 4)
+			game5 = fill_game(matchgames, 5)
+			match1.games << game1 << game2 << game3
+			if game4 != nil
+				match1.games << game4
+				if game5 != nil
+					match1.games << game5
+				end
+			end
+		end
+		tempmatch["players"].each do |p|
+			p = Player.find_by_name(p.split('~')[2])
+			matchplayers << p
+			@roundplayers << p
+		end
+		match1.players = matchplayers
+		matches << match1
+		if input["round"] != "ro2"
+			# Match 2
+			match2 = Match.new
+			tempmatch = input["match2"]
+			matchplayers = []
+			matchgames = tempmatch["bo5"]
+			game1 = fill_game(matchgames, 1)
+			game2 = fill_game(matchgames, 2)
+			game3 = fill_game(matchgames, 3)
+			game4 = fill_game(matchgames, 4)
+			game5 = fill_game(matchgames, 5)
+			match2.games << game1 << game2 << game3
+			if game4 != nil
+				match2.games << game4
+				if game5 != nil
+					match2.games << game5
+				end
+			end
+			tempmatch["players"].each do |p|
+				p = Player.find_by_name(p.split('~')[2])
+				matchplayers << p
+				@roundplayers << p
+			end
+			match2.players = matchplayers
+			matches << match2
+			if input["round"] == "ro8"
+				# Match 3
+				match3 = Match.new
+				tempmatch = input["match3"]
+				matchplayers = []
+				matchgames = tempmatch["bo5"]
+				game1 = fill_game(matchgames, 1)
+				game2 = fill_game(matchgames, 2)
+				game3 = fill_game(matchgames, 3)
+				game4 = fill_game(matchgames, 4)
+				game5 = fill_game(matchgames, 5)
+				match3.games << game1 << game2 << game3
+				if game4 != nil
+					match3.games << game4
+					if game5 != nil
+						match3.games << game5
+					end
+				end
+				tempmatch["players"].each do |p|
+					p = Player.find_by_name(p.split('~')[2])
+					matchplayers << p
+					@roundplayers << p
+				end
+				match3.players = matchplayers
+				matches << match3
+				# Match 4
+				match4 = Match.new
+				tempmatch = input["match4"]
+				matchplayers = []
+				matchgames = tempmatch["bo5"]
+				game1 = fill_game(matchgames, 1)
+				game2 = fill_game(matchgames, 2)
+				game3 = fill_game(matchgames, 3)
+				game4 = fill_game(matchgames, 4)
+				game5 = fill_game(matchgames, 5)
+				match4.games << game1 << game2 << game3
+				if game4 != nil
+					match4.games << game4
+					if game5 != nil
+						match4.games << game5
+					end
+				end
+				tempmatch["players"].each do |p|
+					p = Player.find_by_name(p.split('~')[2])
+					matchplayers << p
+					@roundplayers << p
+				end
+				match4.players = matchplayers
+				matches << match4
+			end
+		end
+	end
+	matches
+end
+def fill_groups(rounddata, groupno)
+	groupid = "group"+groupno
+	group = Group.new
+	tempgroup = rounddata[groupid]
+	@groupplayers = []
+	matches = fill_matches(tempgroup, "groupmatches")
+	matches.each do |match|
+		group.matches << match
+	end
+	group.players = @groupplayers
+	group
+end
+##########/HELPERS ##########
+
 # Generate Tournament
 tournament = Tournament.new
 tournament.year = data["league"][0]
@@ -899,17 +1024,39 @@ ro16.groups << groupD
 ro16.players = @roundplayers
 tournament.rounds << ro16
 
-# # Generate RO8
-# ro8 = Round.new(:roundof => "RO8")
-# ro8players = []
+# Generate RO8
+ro8 = Round.new(:roundof => "RO8")
+@roundplayers = []
+rounddata = data["ro8"]["matches"]
+matches = fill_matches(rounddata, "regularmatches")
+matches.each do |match|
+	ro8.matches << match
+end
+ro8.players = @roundplayers
+tournament.rounds << ro8
 
-# # Generate RO4
-# ro4 = Round.new(:roundof => "RO4")
-# ro4players = []
+# Generate RO4
+ro4 = Round.new(:roundof => "RO4")
+@roundplayers = []
+rounddata = data["ro4"]["matches"]
+matches = fill_matches(rounddata, "regularmatches")
+matches.each do |match|
+	ro4.matches << match
+end
+ro4.players = @roundplayers
+tournament.rounds << ro4
 
-# # Generate RO2
-# ro2 = Round.new(:roundof => "RO2")
-# ro2players = []
+# Generate RO2
+ro2 = Round.new(:roundof => "RO2")
+@roundplayers = []
+rounddata = data["ro2"]["matches"]
+matches = fill_matches(rounddata, "regularmatches")
+matches.each do |match|
+	ro2.matches << match
+end
+ro2.players = @roundplayers
+tournament.rounds << ro2
 
 tournament.save
 #####     DATA-SEED     #####
+File.delete('gsl.html')

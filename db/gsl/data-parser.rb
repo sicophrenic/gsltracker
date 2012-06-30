@@ -96,7 +96,7 @@ def parse_data(path)
   ro2 = $1
   ro2_matches = {}
   finalset = parse_group(players, ro2, "ro2")
-  ro2_matches["match1"] = finalset
+  ro2_matches["matches"] = finalset
   
   tournament["ro32"] = ro32_groups
   tournament["ro16"] = ro16_groups
