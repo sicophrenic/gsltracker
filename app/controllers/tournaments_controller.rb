@@ -1,10 +1,13 @@
 class TournamentsController < ApplicationController
+  before_filter :require_admin, :except => [:index, :show]
+  
   def index
     @tournaments = Tournament.all
   end
 
   def show
     @tournament = Tournament.find(params[:id])
+    @rounds = @tournament.rounds
   end
 
   def new

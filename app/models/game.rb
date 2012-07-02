@@ -3,6 +3,6 @@ class Game < ActiveRecord::Base
   
   has_one :map_assignment
   has_one :map, :through => :map_assignment
-  has_one :game_participant
-  has_one :player, :through => :game_participant
+  has_one :player, :through => :participant
+  has_one :participant, :as => :advances
 end

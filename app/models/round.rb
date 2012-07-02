@@ -7,7 +7,6 @@ class Round < ActiveRecord::Base
   
   has_many :players, :through => :participants
   has_many :participants, :as => :advances
-  has_many :players, :through => :participants
   has_many :groups, :limit => 8
   has_many :matches, :limit => 4
 end

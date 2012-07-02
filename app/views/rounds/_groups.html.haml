@@ -1,0 +1,64 @@
+- if @round.roundof == "RO32" || @round.roundof == "RO16"
+	%br
+	%ul{ :class => "navigation #{@round.roundof}" }
+		%a{ :href => group_path(@groups[0]) }
+			%li
+				%h2 Group A
+				%p 4 Players
+		%a{ :href => group_path(@groups[1]) }
+			%li
+				%h2 Group B
+				%p 4 Players
+		%a{ :href => group_path(@groups[2]) }
+			%li
+				%h2 Group C
+				%p 4 Players
+		%a{ :href => group_path(@groups[3]) }
+			%li
+				%h2 Group D
+				%p 4 Players
+		- if @round.roundof == "RO32"
+			%a{ :href => group_path(@groups[4]) }
+				%li
+					%h2 Group E
+					%p 4 Players
+			%a{ :href => group_path(@groups[5]) }
+				%li
+					%h2 Group F
+					%p 4 Players
+			%a{ :href => group_path(@groups[6]) }
+				%li
+					%h2 Group G
+					%p 4 Players
+			%a{ :href => group_path(@groups[7]) }
+				%li
+					%h2 Group H
+					%p 4 Players
+- else
+	- @matches = @round.matches
+	%br
+	%ul{ :class => "navigation #{@round.roundof}"}
+		%a{ :href => match_path(@matches[0]) }
+			%li
+				- if @round.roundof == "RO2"
+					%h2 Finals
+					%p Best of Seven
+				- else
+					%h2 Match 1
+					%p Best of Five
+		- if @round.roundof == "RO8" || @round.roundof == "RO4"
+			%a{ :href => match_path(@matches[1]) }
+				%li
+					%h2 Match 2
+					%p Best of Five
+			- if @round.roundof == "RO8"
+				%a{ :href => match_path(@matches[2]) }
+					%li
+						%h2 Match 3
+						%p Best of Five
+				%a{ :href => match_path(@matches[3]) }
+					%li
+						%h2 Match 4
+						%p Best of Five
+%br
+%br

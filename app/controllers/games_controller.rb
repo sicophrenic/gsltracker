@@ -1,10 +1,26 @@
 class GamesController < ApplicationController
+  before_filter :require_admin, :except => [:index, :show]
+  
   def index
     @games = Game.all
   end
   
   def show
+    if params[:notice] != nil
+      flash.now[:notice] = params[:notice]
+    end
     @game = Game.find(params[:id])
+    @match = @game.match
+    @gameno = @match.games.index(@game)+1
+    @group = @match.group
+    if @group
+      @round = @group.round
+      @groupno = get_groupno(@round, @group)
+    else
+      @round = @match.round
+      @round.roundof == "RO2" ? @matchno = "Finals" : @matchno = @round.matches.index(@match)+1
+    end
+    @tournament = @round.tournament
   end
 
   def new

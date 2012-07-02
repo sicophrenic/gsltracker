@@ -1,10 +1,18 @@
 class RoundsController < ApplicationController
+  before_filter :require_admin, :except => [:index, :show]
+  
   def index
     @rounds = Round.all
   end
 
   def show
     @round = Round.find(params[:id])
+    if @round.groups
+      @groups = @round.groups
+    else
+      @matches = @round.matches
+    end
+    @tournament = @round.tournament
   end
 
   def new
@@ -39,6 +47,6 @@ class RoundsController < ApplicationController
     @round = Round.find(params[:id])
     @round.destroy
 
-    redirect_to rounds_url }
+    redirect_to rounds_url
   end
 end

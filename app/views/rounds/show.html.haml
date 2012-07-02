@@ -1,2 +1,4 @@
-#h1 Rounds#Show
-Incomplete view.
+%h1.pagetitle
+	%span #{@tournament.year} #{@tournament.league} Season #{@tournament.season}: #{@round.roundof}
+
+= render :partial => "groups"

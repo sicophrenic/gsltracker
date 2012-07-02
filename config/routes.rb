@@ -17,18 +17,9 @@ Gsltracker::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :tournaments
-  resources :rounds
-  resources :groups
-  resources :matches
-  resources :games
-  resources :map_pools
-  resources :maps
-  resources :map_assignments
-  resources :players
-  resources :registrations
-  resources :participants
-  resources :game_participants
+  resources :tournaments, :rounds, :groups, :matches, :games,
+            :map_pools, :maps, :map_assignments, :players,
+            :registrations, :participants, :game_participants
 
   # Sample resource route with options:
   #   resources :products do

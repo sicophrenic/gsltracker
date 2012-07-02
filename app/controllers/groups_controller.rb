@@ -1,10 +1,16 @@
 class GroupsController < ApplicationController
+  before_filter :require_admin, :except => [:index, :show]
+  
   def index
     @groups = Group.all
   end
 
   def show
     @group = Group.find(params[:id])
+    @round = @group.round
+    @groupno = get_groupno(@round, @group)
+    @matches = @group.matches
+    @tournament = @round.tournament
   end
 
   def new

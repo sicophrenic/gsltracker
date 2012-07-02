@@ -1,4 +1,6 @@
 class PlayersController < ApplicationController
+  before_filter :require_admin, :except => [:index, :show]
+  
   def index
     @players = Player.all
   end

@@ -1,4 +1,6 @@
 class MapsController < ApplicationController
+  before_filter :require_admin, :except => [:index, :show]
+  
   def index
     @maps = Map.all
   end

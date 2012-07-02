@@ -1,2 +1,13 @@
-#h1 Matches#Show
-Incomplete view.
+%h1.pagetitle
+	%span
+		#{@tournament.year} #{@tournament.league} Season #{@tournament.season}:
+		- if @round.roundof == "RO2"
+			#{@matchno}
+		- else
+			#{@round.roundof}
+			- if @group
+				Group #{@groupno}
+			Match #{@matchno}
+
+= render :partial => "players"
+= render :partial => "games"

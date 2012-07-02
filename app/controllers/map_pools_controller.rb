@@ -1,4 +1,6 @@
 class MapPoolsController < ApplicationController
+  before_filter :require_admin, :except => [:index, :show]
+  
   def index
     @map_pools = MapPool.all
   end

@@ -12,7 +12,7 @@
 ##### 			DATA 				#####
 data = {"league"=>["2012", "GSL", "Season 2"],
  "banner"=>
-  "http://wiki.teamliquid.net/starcraft/images2/thumb/3/3a/GSL2012Season2Banner.jpg/600px-GSL2012Season2Banner.jpg",
+  "http://img.gomtv.net/imgdata/50156.jpg",
  "maps"=>
   ["Antiga Shipyard",
    "Cloud Kingdom",
@@ -554,13 +554,8 @@ def fill_game(matchdata, gameno)
 	if matchdata[gameid]["map"] != ""
 		game = Game.new
 		game.map = Map.find_by_name(matchdata[gameid]["map"])
-		part = GameParticipant.new
-		playerinfo = matchdata[gameid]["winner"].split('~')
-		part.race = playerinfo[0]
-		part.team = playerinfo[1]
-		part.game = game
-		part.player = Player.find_by_name(playerinfo[2])
-		part.save
+    game.player = Player.find_by_name(matchdata[gameid]["winner"].split('~')[2])
+		game.save
 	else
 		game = nil
 	end
@@ -811,17 +806,20 @@ tournament.banner = data["banner"]
 # Generate Map Pool
 mappool = MapPool.new
 data["maps"].each do |map|
-Map.create(:name => map)
+  Map.create(:name => map)
 end
 mappool.maps << Map.all
 tournament.map_pool = mappool
 
 # Generate Players
 data["players"].each do |name,raceteamname|
-Player.create(:name => name)
-end
-Player.all.each do |player|
-player.tournaments << tournament
+  player = Player.create(:name => name)
+  reg = Registration.new
+  reg.tournament = tournament
+  reg.player = player
+  reg.race = raceteamname.split('~')[0]
+  reg.team = raceteamname.split('~')[1]
+  reg.save
 end
 
 # Generate RO32

@@ -1,2 +1,44 @@
-#h1 Tournaments#Show
-Incomplete view.
+%h1.pagetitle
+	%span #{@tournament.year} #{@tournament.league} Season #{@tournament.season}
+
+%br
+.row
+	.span10
+		%img.banner{ :src => @tournament.banner }
+	.span2
+		.row
+			.span2
+				%a{ :class => "span2 btn btn-warning", :href => round_path() } Overview
+		%br
+		.row
+			.span2
+				%a{ :class => "span2 btn btn-warning", :href => round_path() } Stats
+		%br
+		.row
+			.span2
+				%a{ :class => "span2 btn btn-warning", :href => round_path() } Summary
+
+%br
+%ul.navigation
+	%a{ :href => round_path(@rounds[0]) }
+		%li
+			%h2 ROUND OF 32
+			%p Group Stages
+	%a{ :href => round_path(@rounds[1]) }
+		%li
+			%h2 ROUND OF 16
+			%p Group Stages
+	%a{ :href => round_path(@rounds[2]) }
+		%li
+			%h2 ROUND OF 8
+			%p Quarter-Finals
+	%a{ :href => round_path(@rounds[3]) }
+		%li
+			%h2 ROUND OF 4
+			%p Semi-Finals
+	%a{ :href => round_path(@rounds[4]) }
+		%li
+			%h2 ROUND OF 2
+			%p Finals
+%br
+%br

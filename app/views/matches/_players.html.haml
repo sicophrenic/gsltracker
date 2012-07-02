@@ -1,0 +1,8 @@
+%br
+.row
+	- @registrations.each do |reg|
+		.span6
+			.circle
+				%h3 #{reg.team}
+				%h1 #{reg.player.name}
+				%img{ :src => "/assets/#{reg.race}.png"}

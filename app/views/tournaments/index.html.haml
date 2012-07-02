@@ -1,2 +1,8 @@
-%h1 Tournaments#Index
-Incomplete view.
+%h1.pagetitle
+	%span Tournaments
+
+%br
+.tournaments
+	- @tournaments.each do |tournament|
+		%a{ :href => tournament_path(tournament) }
+			%img.banner{ :src => tournament.banner }

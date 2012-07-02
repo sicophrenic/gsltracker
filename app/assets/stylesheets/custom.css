@@ -5,9 +5,129 @@
 	display: inline-block;
 	border-bottom: 2px solid #ECBB13;
 }
-
 .pagedetails {
 	text-align: center;
+}
+
+.banner {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.navigation li {
+	width: 120px;
+	border-left: 5px solid #f60;
+	float: left;
+	cursor: pointer;
+	list-style-type: none;
+	padding: 10px 50px 10px 15px;
+
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+}
+.bo7 li {
+	width: 65px;
+	padding: 10px 50px 10px 15px;
+}
+.groupmatches li, .bo5 li {
+	width: 120px;
+	padding: 10px 50px 10px 15px;
+}
+.RO32 li, .RO16 li, .RO8 li {
+	width: 170px;
+	padding: 10px 50px 10px 15px;
+}
+.bo3 li {
+	width: 240px;
+	padding: 10px 50px 10px 15px;
+}
+.RO4 li {
+	width: 400px;
+	padding: 10px 50px 10px 15px;
+}
+.RO2 li {
+	width: 860px;
+	padding: 10px 50px 10px 15px;
+}
+.navigation li a {
+	text-decoration: none;
+}
+.navigation li h2 {
+	font-family: georgia;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 14px;
+	margin-bottom: 5px;
+	line-height: 10px;
+}
+.navigation li p {
+	font-size: 11px;
+	color: #fff;
+	
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	-o-transition: all 0.1s ease-in;
+}
+.navigation li:hover {
+	background: #f60;
+	border-left: 5px solid #fff;
+}
+.navigation li:hover h2 {
+	color: #222;
+	font-weight: bold;
+}
+.navigation li:hover p {
+	color: #222;
+}
+
+.circle {
+	width: 250px;
+	height: 250px;
+	background: transparent;
+	border: 1px solid #ff6600;
+	border-radius: 125px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	-moz-border-radius: 125px
+	-webkit-border-radius: 125px;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-ms-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+}
+.circle:hover {
+	border-color: transparent;
+}
+.circle img {	
+	position: static;
+	margin-top: -25%;
+	opacity: 0.3;
+
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-ms-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+}
+.circle img:hover {
+	opacity: 0.1;
+}
+.circle h1, .circle h3 {
+	position: relative;
+	text-align: center;
+	/*top: -50%;*/
+	top: 50%;
+	color: #f60;
 }
 
 /*Accordian*/

@@ -1,4 +1,6 @@
 class ParticipantsController < ApplicationController
+  before_filter :require_admin, :except => [:index, :show]
+  
   def index
     @participants = Participant.all
   end

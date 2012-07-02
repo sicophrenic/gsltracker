@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120628084318) do
 
-  create_table "game_participants", :force => true do |t|
-    t.integer  "player_id"
-    t.integer  "game_id"
-    t.string   "race"
-    t.string   "team"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "games", :force => true do |t|
     t.integer  "match_id"
     t.datetime "created_at", :null => false
@@ -81,6 +72,8 @@ ActiveRecord::Schema.define(:version => 20120628084318) do
   create_table "registrations", :force => true do |t|
     t.integer  "player_id"
     t.integer  "tournament_id"
+    t.string   "race"
+    t.string   "team"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
