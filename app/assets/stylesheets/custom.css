@@ -1,3 +1,4 @@
+/* Miscellaneous Styling for Pages */
 .pagetitle {
 	border-bottom: 1px solid #ff6600;
 }
@@ -8,13 +9,13 @@
 .pagedetails {
 	text-align: center;
 }
-
 .banner {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+/* Styling for Tournament Navigation(s) */
 .navigation li {
 	width: 120px;
 	border-left: 5px solid #f60;
@@ -82,54 +83,6 @@
 	color: #222;
 }
 
-.circle {
-	width: 250px;
-	height: 250px;
-	background: transparent;
-	border: 1px solid #ff6600;
-	border-radius: 125px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-
-	-moz-border-radius: 125px
-	-webkit-border-radius: 125px;
-	
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	
-	-webkit-transition: 0.5s ease;
-	-moz-transition: 0.5s ease;
-	-ms-transition: 0.5s ease;
-	-o-transition: 0.5s ease;
-	transition: 0.5s ease;
-}
-.circle:hover {
-	border-color: transparent;
-}
-.circle img {	
-	position: static;
-	margin-top: -25%;
-	opacity: 0.3;
-
-	-webkit-transition: 0.5s ease;
-	-moz-transition: 0.5s ease;
-	-ms-transition: 0.5s ease;
-	-o-transition: 0.5s ease;
-	transition: 0.5s ease;
-}
-.circle img:hover {
-	opacity: 0.1;
-}
-.circle h1, .circle h3 {
-	position: relative;
-	text-align: center;
-	/*top: -50%;*/
-	top: 50%;
-	color: #f60;
-}
-
 /*Accordian*/
 /*
 Width of image = 640px
@@ -139,25 +92,21 @@ width of un-hovered image = 40px - you can set this to anything
 so total container width = 640 + 40*5 = 840px;
 default width = 840/6 = 140;
 */
-
 .accordian {
 	width: 845px; height: 360px;
 	overflow: hidden;
-	
 	/*Time for some styling*/
 	margin: 25px auto;
 	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 }
-
 /*A small hack to prevent flickering on some browsers*/
 .accordian ul {
 	width: 2000px;
 	/*This will give ample space to the last item to move
 	instead of falling down/flickering during hovers.*/
 }
-
 .accordian li {
 	position: relative;
 	display: block;
@@ -177,29 +126,24 @@ default width = 840/6 = 140;
 	/*If you hover on the images now you should be able to 
 	see the basic accordian*/
 }
-
 /*Reduce with of un-hovered elements*/
 .accordian ul:hover li {width: 40px;}
 /*Lets apply hover effects now*/
 /*The LI hover style should override the UL hover style*/
 .accordian ul li:hover {width: 640px;}
-
 .accordian ul {
 	margin: 0px;
 }
-
 .accordian li img {
 	max-width: 640px;
 	display: block;
 }
-
 /*Image title styles*/
 .image_title {
 	background: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	left: 0; bottom: 0;	
 	width: 640px;	
-
 }
 .image_title a {
 	display: block;

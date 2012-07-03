@@ -3,6 +3,10 @@
 	- @registrations.each do |reg|
 		.span6
 			.circle
-				%h3 #{reg.team}
-				%h1 #{reg.player.name}
+				%p.team #{reg.team}
+				%p.name #{reg.player.name}
 				%img{ :src => "/assets/#{reg.race}.png"}
+.row
+	.span12
+		.vs
+			%p VS.

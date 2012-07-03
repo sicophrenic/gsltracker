@@ -4,3 +4,4 @@ log/*.log
 tmp/
 .sass-cache/
 *.sublime*
+.DS_Store

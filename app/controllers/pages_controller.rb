@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   def home
     @homepage = gomtv_home
-    puts @homepage
   end
   
   def about

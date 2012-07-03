@@ -1,0 +1,118 @@
+// Styling for Matchup Previews
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+.circle {
+	width: 250px;
+	height: 250px;
+	background: transparent;
+	border: 1px solid #ff6600;
+	border-radius: 125px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-ms-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+}
+.circle img {	
+	position: static;
+	margin-top: -22%;
+	opacity: 0.3;
+
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-ms-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+}
+.circle p {
+	font-family: 'Lobster', cursive;
+	position: relative;
+	text-align: center;
+	top: 50%;
+	color: transparent;	
+
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-ms-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+}
+.team {
+	font-size: 25px;
+}
+.name {
+	font-size: 45px;
+}
+
+.circle:hover {
+	-webkit-animation: circle-active 1s infinite;
+	-moz-animation: circle-active 1s infinite;
+	-ms-animation: circle-active 1s infinite;
+	-o-animation: circle-active 1s infinite;
+	animation: circle-active 1s infinite;
+
+	p {
+		color: #ff6600;
+	}
+	img {
+		opacity: 0.1;
+	}
+}
+
+@-webkit-keyframes circle-active {
+    0% {
+    	border: 1px solid #ff6600;
+    }
+    50% {
+    	border: 1px solid transparent;
+    }
+    100% {
+    	border: 1px solid #ff6600;
+    }
+}
+@-moz-keyframes circle-active {
+    0% {
+    	border: 1px solid #ff6600;
+    }
+    50% {
+    	border: 1px solid transparent;
+    }
+    100% {
+    	border: 1px solid #ff6600;
+    }
+}
+@-o-keyframes circle-active {
+    0% {
+    	border: 1px solid #ff6600;
+    }
+    50% {
+    	border: 1px solid transparent;
+    }
+    100% {
+    	border: 1px solid #ff6600;
+    }
+}
+@keyframes circle-active {
+    0% {
+    	border: 1px solid #ff6600;
+    }
+    50% {
+    	border: 1px solid transparent;
+    }
+    100% {
+    	border: 1px solid #ff6600;
+    }
+}
+
+.vs {
+	font-family: 'Lobster', cursive;
+	font-size: 100px;
+	color: #ECBB13;
+	text-align: center;
+	margin-top: -15%;
+}
