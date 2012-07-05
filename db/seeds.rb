@@ -376,7 +376,7 @@ data = {"league"=>["2012", "GSL", "Season 2"],
         {"game1"=>{"map"=>"Metropolis", "winner"=>"Protoss~Liquid~HerO"},
          "game2"=>{"map"=>"Atlantis Spaceship", "winner"=>"Zerg~FXO~Leenock"},
          "game3"=>
-          {"map"=>"antombed valley", "winner"=>"Protoss~Liquid~HerO"}}},
+          {"map"=>"Entombed Valley", "winner"=>"Protoss~Liquid~HerO"}}},
      "winners"=>
       {"players"=>["Terran~IM~Mvp", "Protoss~Liquid~HerO"],
        "bo3"=>
