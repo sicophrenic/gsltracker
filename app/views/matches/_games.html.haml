@@ -1,4 +1,3 @@
-%br
 %ul{ :class => "navigation bo#{@bestof}" }
 	- count = 0
 	- while count < @games.count
@@ -8,10 +7,8 @@
 				%p 
 		- count += 1
 	- while count < @bestof
-		%a{ :href => game_path(@games[@games.count-1], :notice => "Game was not played. To prevent spoilers, you have been redirected to the last played game in the match.") }
+		%a{ :href => game_path(@games[@games.count-1], :notice => "Game #{count+1} was not played. To prevent spoilers, you have been redirected to the last played game in the match.") }
 			%li
 				%h2 Game #{count+1}
 				%p 
 		- count += 1
-%br
-%br

@@ -1,13 +1,13 @@
-// Styling for Matchup Previews
+// Styling for Champion
 
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
-.matchup {
-	width: 250px;
-	height: 250px;
+.final .winner {
+	width: 350px;
+	height: 350px;
 	background: transparent;
 	border: 1px solid #ff6600;
-	border-radius: 125px;
+	border-radius: 175px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -24,10 +24,13 @@
 	-o-transition: 0.5s ease;
 	transition: 0.5s ease;
 }
-.matchup img {	
+.final .winner img {
 	position: static;
-	margin-top: -22%;
-	opacity: 1;
+	margin-top: -15%;
+	opacity: 0;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 
 	-webkit-transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
@@ -35,7 +38,21 @@
 	-o-transition: 0.5s ease;
 	transition: 0.5s ease;
 }
-.matchup p {
+.final .champion img {	
+	position: static;
+	margin-top: -32%;
+	opacity: 1;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-ms-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+}
+.final .winner p {
 	font-family: 'Lobster', cursive;
 	position: relative;
 	text-align: center;
@@ -58,22 +75,27 @@
 	font-size: 15px;
 	margin-top: -70%;
 }
-.matchup:hover {
-	-webkit-animation: matchup-active 1s infinite;
-	-moz-animation: matchup-active 1s infinite;
-	-ms-animation: matchup-active 1s infinite;
-	-o-animation: matchup-active 1s infinite;
-	animation: matchup-active 1s infinite;
+.final:hover {
+	.winner {
+		-webkit-animation: winner-active 1s infinite;
+		-moz-animation: winner-active 1s infinite;
+		-ms-animation: winner-active 1s infinite;
+		-o-animation: winner-active 1s infinite;
+		animation: winner-active 1s infinite;
+	}
 
-	p {
+	.winner p, p {
 		color: #ff6600;
 	}
-	img {
-		opacity: 0.2;
+	.winner img {
+		opacity: 0.3;
+	}
+	.champion img {
+		opacity: 0.05;
 	}
 }
 
-@-webkit-keyframes matchup-active {
+@-webkit-keyframes winner-active {
     0% {
     	border: 1px solid #ff6600;
     }
@@ -84,7 +106,7 @@
     	border: 1px solid #ff6600;
     }
 }
-@-moz-keyframes matchup-active {
+@-moz-keyframes winner-active {
     0% {
     	border: 1px solid #ff6600;
     }
@@ -95,7 +117,7 @@
     	border: 1px solid #ff6600;
     }
 }
-@-o-keyframes matchup-active {
+@-o-keyframes winner-active {
     0% {
     	border: 1px solid #ff6600;
     }
@@ -106,7 +128,7 @@
     	border: 1px solid #ff6600;
     }
 }
-@keyframes matchup-active {
+@keyframes winner-active {
     0% {
     	border: 1px solid #ff6600;
     }
@@ -116,12 +138,4 @@
     100% {
     	border: 1px solid #ff6600;
     }
-}
-
-.vs {
-	font-family: 'Lobster', cursive;
-	font-size: 100px;
-	color: #ECBB13;
-	text-align: center;
-	margin-top: -10%;
 }

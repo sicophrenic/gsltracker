@@ -1,0 +1,24 @@
+.row
+	.span12
+		- if @round.roundof == "RO2" && @gameno == @match.games.count
+			.final
+				.winner
+					%p.team #{@reg.team}
+					%p.name #{@reg.player.name}
+					%img{ :src => "/assets/#{@reg.race}Large.png"}
+					%p.map #{@game.map.name}
+				.champion
+					%img{ :src => "/assets/Champion.png"}
+		- elsif (@gameno == @match.games.count && @group == nil) || (@gameno == @match.games.count && @group != nil && (@matchno == 3 || @matchno == 5))
+			.advances
+				%p.team #{@reg.team}
+				%p.name #{@reg.player.name}
+				%img.race{ :src => "/assets/#{@reg.race}.png"}
+				%img.roundof{ :src => "/assets/Advances#{@round.roundof}.png"}
+				%p.map #{@game.map.name}
+		- else
+			.matchup
+				%p.team #{@reg.team}
+				%p.name #{@reg.player.name}
+				%img{ :src => "/assets/#{@reg.race}.png"}
+				%p.map #{@game.map.name}

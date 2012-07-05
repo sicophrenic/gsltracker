@@ -16,11 +16,14 @@ class GamesController < ApplicationController
     if @group
       @round = @group.round
       @groupno = get_groupno(@round, @group)
+      @matchno = @group.matches.index(@match)+1
     else
       @round = @match.round
       @round.roundof == "RO2" ? @matchno = "Finals" : @matchno = @round.matches.index(@match)+1
     end
     @tournament = @round.tournament
+    @winner = Player.find_by_name(@game.player.name)
+    @reg = Registration.find_by_player_id(@winner)
   end
 
   def new

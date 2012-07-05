@@ -144,7 +144,7 @@ MarineKing
 
 July
 MarineKing
-metropolis
+Metropolis
 July
 Entombed Valley
 MarineKing
@@ -152,7 +152,7 @@ Daybreak
 MarineKing
 aLive
 Zenio
-metropolis
+Metropolis
 Zenio
 Entombed Valley
 aLive
@@ -176,7 +176,7 @@ Daybreak
 Maru
 HerO
 Curious
-metropolis
+Metropolis
 HerO
 Dual Sight
 Curious
@@ -242,7 +242,7 @@ MC
 NesTea
 Dual Sight
 MC
-metropolis
+Metropolis
 MC
 
 
@@ -417,7 +417,7 @@ Antiga Shipyard
 Mvp
 HerO
 Leenock
-metropolis
+Metropolis
 HerO
 Atlantis Spaceship
 Leenock
@@ -465,7 +465,7 @@ MarineKing
 
 PartinG
 MarineKing
-metropolis
+Metropolis
 PartinG
 Entombed Valley
 MarineKing
@@ -473,7 +473,7 @@ Cloud Kingdom
 PartinG
 TheStC
 TaeJa
-metropolis
+Metropolis
 TaeJa
 Daybreak
 TaeJa
@@ -491,7 +491,7 @@ MC
 Maru
 Daybreak
 Maru
-metropolis
+Metropolis
 MC
 Antiga Shipyard
 Maru
@@ -517,7 +517,7 @@ Antiga Shipyard
 Oz
 Dual Sight
 MC
-metropolis
+Metropolis
 Oz
 Maru
 Oz

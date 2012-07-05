@@ -1,5 +1,4 @@
 - if @round.roundof == "RO32" || @round.roundof == "RO16"
-	%br
 	%ul{ :class => "navigation #{@round.roundof}" }
 		%a{ :href => group_path(@groups[0]) }
 			%li
@@ -36,7 +35,6 @@
 					%p 4 Players
 - else
 	- @matches = @round.matches
-	%br
 	%ul{ :class => "navigation #{@round.roundof}"}
 		%a{ :href => match_path(@matches[0]) }
 			%li
@@ -60,5 +58,3 @@
 					%li
 						%h2 Match 4
 						%p Best of Five
-%br
-%br

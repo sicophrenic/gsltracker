@@ -14,8 +14,32 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+.navbtn {
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: -25px;
+}
+.navbtn p {
+	font-family: 'Helvetica';
+	font-weight: bold;
+	font-style: italic;
+}
+.players {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.result {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
 
 /* Styling for Tournament Navigation(s) */
+.navigation {
+	margin-top: 15px;
+}
 .navigation li {
 	width: 120px;
 	border-left: 5px solid #f60;
@@ -29,7 +53,7 @@
 	-o-transition: all 0.3s ease-in;
 }
 .bo7 li {
-	width: 65px;
+	width: 67px;
 	padding: 10px 50px 10px 15px;
 }
 .groupmatches li, .bo5 li {
@@ -37,15 +61,15 @@
 	padding: 10px 50px 10px 15px;
 }
 .RO32 li, .RO16 li, .RO8 li {
-	width: 170px;
+	width: 166px;
 	padding: 10px 50px 10px 15px;
 }
 .bo3 li {
-	width: 240px;
+	width: 243px;
 	padding: 10px 50px 10px 15px;
 }
 .RO4 li {
-	width: 400px;
+	width: 398px;
 	padding: 10px 50px 10px 15px;
 }
 .RO2 li {

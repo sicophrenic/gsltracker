@@ -142,14 +142,14 @@ data = {"league"=>["2012", "GSL", "Season 2"],
      "winners"=>
       {"players"=>["Zerg~StarTale~July", "Terran~Prime~MarineKing"],
        "bo3"=>
-        {"game1"=>{"map"=>"metropolis", "winner"=>"Zerg~StarTale~July"},
+        {"game1"=>{"map"=>"Metropolis", "winner"=>"Zerg~StarTale~July"},
          "game2"=>
           {"map"=>"Entombed Valley", "winner"=>"Terran~Prime~MarineKing"},
          "game3"=>{"map"=>"Daybreak", "winner"=>"Terran~Prime~MarineKing"}}},
      "losers"=>
       {"players"=>["Terran~Fnatic~aLive", "Zerg~Liquid~Zenio"],
        "bo3"=>
-        {"game1"=>{"map"=>"metropolis", "winner"=>"Zerg~Liquid~Zenio"},
+        {"game1"=>{"map"=>"Metropolis", "winner"=>"Zerg~Liquid~Zenio"},
          "game2"=>{"map"=>"Entombed Valley", "winner"=>"Terran~Fnatic~aLive"},
          "game3"=>{"map"=>"Dual Sight", "winner"=>"Zerg~Liquid~Zenio"}}},
      "tiebreak"=>
@@ -170,7 +170,7 @@ data = {"league"=>["2012", "GSL", "Season 2"],
      "match2"=>
       {"players"=>["Protoss~Liquid~HerO", "Zerg~StarTale~Curious"],
        "bo3"=>
-        {"game1"=>{"map"=>"metropolis", "winner"=>"Protoss~Liquid~HerO"},
+        {"game1"=>{"map"=>"Metropolis", "winner"=>"Protoss~Liquid~HerO"},
          "game2"=>{"map"=>"Dual Sight", "winner"=>"Zerg~StarTale~Curious"},
          "game3"=>
           {"map"=>"Entombed Valley", "winner"=>"Protoss~Liquid~HerO"}}},
@@ -224,7 +224,7 @@ data = {"league"=>["2012", "GSL", "Season 2"],
       {"players"=>["Protoss~SK~MC", "Zerg~IM~NesTea"],
        "bo3"=>
         {"game1"=>{"map"=>"Dual Sight", "winner"=>"Protoss~SK~MC"},
-         "game2"=>{"map"=>"metropolis", "winner"=>"Protoss~SK~MC"},
+         "game2"=>{"map"=>"Metropolis", "winner"=>"Protoss~SK~MC"},
          "game3"=>{"map"=>"", "winner"=>nil}}}},
    "groupF"=>
     {"round"=>"ro32",
@@ -373,7 +373,7 @@ data = {"league"=>["2012", "GSL", "Season 2"],
      "match2"=>
       {"players"=>["Protoss~Liquid~HerO", "Zerg~FXO~Leenock"],
        "bo3"=>
-        {"game1"=>{"map"=>"metropolis", "winner"=>"Protoss~Liquid~HerO"},
+        {"game1"=>{"map"=>"Metropolis", "winner"=>"Protoss~Liquid~HerO"},
          "game2"=>{"map"=>"Atlantis Spaceship", "winner"=>"Zerg~FXO~Leenock"},
          "game3"=>
           {"map"=>"antombed valley", "winner"=>"Protoss~Liquid~HerO"}}},
@@ -416,7 +416,7 @@ data = {"league"=>["2012", "GSL", "Season 2"],
      "winners"=>
       {"players"=>["Protoss~StarTale~PartinG", "Terran~Prime~MarineKing"],
        "bo3"=>
-        {"game1"=>{"map"=>"metropolis", "winner"=>"Protoss~StarTale~PartinG"},
+        {"game1"=>{"map"=>"Metropolis", "winner"=>"Protoss~StarTale~PartinG"},
          "game2"=>
           {"map"=>"Entombed Valley", "winner"=>"Terran~Prime~MarineKing"},
          "game3"=>
@@ -424,7 +424,7 @@ data = {"league"=>["2012", "GSL", "Season 2"],
      "losers"=>
       {"players"=>["Terran~oGs~TheStC", "Terran~Liquid~TaeJa"],
        "bo3"=>
-        {"game1"=>{"map"=>"metropolis", "winner"=>"Terran~Liquid~TaeJa"},
+        {"game1"=>{"map"=>"Metropolis", "winner"=>"Terran~Liquid~TaeJa"},
          "game2"=>{"map"=>"Daybreak", "winner"=>"Terran~Liquid~TaeJa"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "tiebreak"=>
@@ -439,7 +439,7 @@ data = {"league"=>["2012", "GSL", "Season 2"],
       {"players"=>["Protoss~SK~MC", "Terran~Prime~Maru"],
        "bo3"=>
         {"game1"=>{"map"=>"Daybreak", "winner"=>"Terran~Prime~Maru"},
-         "game2"=>{"map"=>"metropolis", "winner"=>"Protoss~SK~MC"},
+         "game2"=>{"map"=>"Metropolis", "winner"=>"Protoss~SK~MC"},
          "game3"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~Prime~Maru"}}},
      "match2"=>
       {"players"=>["Protoss~FXO~Oz", "Protoss~StarTale~Squirtle"],
@@ -462,7 +462,7 @@ data = {"league"=>["2012", "GSL", "Season 2"],
        "bo3"=>
         {"game1"=>{"map"=>"Antiga Shipyard", "winner"=>"Protoss~FXO~Oz"},
          "game2"=>{"map"=>"Dual Sight", "winner"=>"Protoss~SK~MC"},
-         "game3"=>{"map"=>"metropolis", "winner"=>"Protoss~FXO~Oz"}}},
+         "game3"=>{"map"=>"Metropolis", "winner"=>"Protoss~FXO~Oz"}}},
      "tiebreak"=>
       {"players"=>["Terran~Prime~Maru", "Protoss~FXO~Oz"],
        "bo3"=>

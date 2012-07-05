@@ -8,7 +8,11 @@
 		= csrf_meta_tags
 	
 	%body
-		= render :partial => 'shared/header'
-		= render :partial => 'shared/flash', :locals => { :flash => flash }
-		= yield
-		= render :partial => 'shared/footer'
+		.container
+			.header
+				= render :partial => 'shared/header'
+			= render :partial => 'shared/flash', :locals => { :flash => flash }
+			.content
+				= yield
+			.footer
+				= render :partial => 'shared/footer'
