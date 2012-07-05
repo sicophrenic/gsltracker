@@ -36,6 +36,41 @@
 	margin-bottom: 15px;
 }
 
+/* Styling for Error Pages */
+
+.dialog {
+	font-family: 'Raleway';
+	width: 70em;
+	padding: 5em 10em;
+	margin: 5em auto 0 auto;
+	border-top: 1px solid #ecbb13;
+	border-left: 1px solid #ecbb13;
+	border-bottom: 1px solid #ff6600;
+	border-right: 1px solid #ff6600;
+}
+.dialog h1 {
+	font-size: 45px;
+	text-align: right;
+}
+.dialog h3 {
+	font-size: 15px;
+	text-align: right;
+}
+.dialog p {
+	padding-top: 2em;
+	text-align: right;
+}
+.homebtn {
+	display: block;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 25%;
+	padding: 30px 30px;
+	font-family: 'Raleway';
+	font-size: 40px;
+}
+
 /* Styling for Tournament Navigation(s) */
 .navigation {
 	margin-top: 15px;
