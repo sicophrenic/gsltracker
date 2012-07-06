@@ -9,6 +9,7 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	color: transparent;
 	
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -38,7 +39,7 @@
 	position: relative;
 	text-align: center;
 	top: 50%;
-	color: transparent;	
+	color: inherit;	
 
 	-webkit-transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
@@ -57,15 +58,14 @@
 	margin-top: -70%;
 }
 .matchup:hover {
+	color: #ff6600;
+
 	-webkit-animation: matchup-active 1s infinite;
 	-moz-animation: matchup-active 1s infinite;
 	-ms-animation: matchup-active 1s infinite;
 	-o-animation: matchup-active 1s infinite;
 	animation: matchup-active 1s infinite;
 
-	p {
-		color: #ff6600;
-	}
 	img {
 		opacity: 0.2;
 	}
