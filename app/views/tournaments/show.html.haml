@@ -6,11 +6,11 @@
 	.span10
 		%img.banner{ :src => @tournament.banner }
 	.span2
-		%a{ :class => "navbtn btn btn-warning", :href => '#' }
+		%a{ :class => "navbtn btn btn-warning", :href => overview_tournament_path(@tournament) }
 			%p OVERVIEW
-		%a{ :class => "navbtn btn btn-warning", :href => '#' }
+		%a{ :class => "navbtn btn btn-warning", :href => stats_tournament_path(@tournament) }
 			%p STATS
-		%a{ :class => "navbtn btn btn-warning", :href => '#' }
+		%a{ :class => "navbtn btn btn-warning", :href => summary_tournament_path(@tournament) }
 			%p SUMMARY
 
 %br
