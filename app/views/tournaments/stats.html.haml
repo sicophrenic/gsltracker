@@ -39,9 +39,9 @@
 				type: 'pie',
 				name: 'Races',
 				data: [
-					['Terran', #{@races["Terran"]}],
-					['Protoss', #{@races["Protoss"]}],
-					['Zerg', #{@races["Zerg"]}]
+					['Terran', #{@races["Terran"].count}],
+					['Protoss', #{@races["Protoss"].count}],
+					['Zerg', #{@races["Zerg"].count}]
 				]
 			}]
 		});
@@ -60,7 +60,7 @@
 				}
 			},
 			xAxis: {
-				categories: #{@teams.keys},
+				categories: #{@teamschart.keys},
 				labels: {
 					rotation: -45,
 					align: 'right',
@@ -95,7 +95,7 @@
 			},
 			series: [{
 				name: 'Teams',
-				data: #{@teams.values}
+				data: #{@teamschart.values}
 			}]
 		});
 	};

@@ -53,25 +53,29 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.find(params[:id])
     @players = @tournament.players
     @registrations = {}
+    @teamschart = {}
+    @raceschart = {}
     @teams = {}
     @races = {}
     @players.each do |player|
       reg = Registration.find_by_player_id(player)
+      fullname = reg.team+"."+player.name
       @registrations[player] = reg
-      if @teams[reg.team] == nil
-        @teams[reg.team] = 1
+      if @teamschart[reg.team] == nil
+        @teamschart[reg.team] = 1
+        @teams[reg.team] = [] << fullname
       else
-        @teams[reg.team] += 1
+        @teamschart[reg.team] += 1
+        @teams[reg.team] << fullname
       end
-      if @races[reg.race] == nil
-        @races[reg.race] = 1
+      if @raceschart[reg.race] == nil
+        @raceschart[reg.race] = 1
+        @races[reg.race] = [] << fullname
       else
-        @races[reg.race] += 1
+        @raceschart[reg.race] += 1
+        @races[reg.race] << fullname
       end
     end
-    @terranno = @races["Terran"].to_f*100/32.to_f
-    @protossno = @races["Protoss"].to_f*100/32.to_f
-    @zergno = @races["Zerg"].to_f*100/32.to_f
   end
 
   def summary
