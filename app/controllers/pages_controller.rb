@@ -17,21 +17,21 @@ class PagesController < ApplicationController
       agent = Mechanize.new
       page = agent.get('http://gomtv.net')
       content = page.content.gsub("\r","").gsub("\t","").gsub("\n","")
-      count = 0
-      content.match(/<dt id="promotion_#{count}"(.*)<dt id="promotion_#{count+1}"/)
+      @count = 0
+      content.match(/<dt id="promotion_#{@count}"(.*)<dt id="promotion_#{@count+1}"/)
       section = $1
       while section != nil do
-      # while count < 5 do
+      # while @count < 3 do
         section.match(/src="(.*jpg)"/)
         img = $1
         section.match(/title="(.*)"\s?class.*"tit"/)
         info = $1
         data[img] = info
-      	count += 1
-        content.match(/<dt id="promotion_#{count}"(.*)<dt id="promotion_#{count+1}"/)
+      	@count += 1
+        content.match(/<dt id="promotion_#{@count}"(.*)<dt id="promotion_#{@count+1}"/)
         section = $1
       end
-      content.match(/<dt id="promotion_#{count}"(.*)main_pro_num/)
+      content.match(/<dt id="promotion_#{@count}"(.*)main_pro_num/)
       section = $1
       if section != nil
         section.match(/src="(.*jpg)"/)
@@ -39,8 +39,9 @@ class PagesController < ApplicationController
         section.match(/title="(.*)"\s?class.*"tit"/)
         info = $1
         data[img] = info
-        count += 1
+        @count += 1
       end
+      # @count -= 1
       data
     end
 end
