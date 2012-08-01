@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
-   private
+
+  private
     def require_admin
       unless user_signed_in? && current_user.admin?
         flash[:error] = "You must be an admin to access this feature."
@@ -29,5 +29,26 @@ class ApplicationController < ActionController::Base
     		letter = "H"
     	end
     	letter
+    end
+
+    def get_tournament_matches(tournament_id)
+      tournament = Tournament.find(tournament_id)
+      rounds = tournament.rounds
+      matches = []
+      rounds.each do |round|
+        if round.groups != []
+          groups = round.groups
+          groups.each do |group|
+            group.matches.each do |match|
+              matches << match
+            end
+          end
+        elsif round.matches != []
+          round.matches.each do |match|
+            matches << match
+          end
+        end
+      end
+      matches
     end
 end

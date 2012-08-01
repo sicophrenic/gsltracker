@@ -1,7 +1,79 @@
-= race_and_teams
+%img.banner{ :src => @tournament.banner }
+%br
 
+/ .tabbable
+/ 	%ul.nav.nav-tabs
+/ 		%li
+/ 			%a{ :href => "#player_stats", "data-toggle" => "tab"}
+/ 				Player Stats
+/ 		%li
+/ 			%a{ :href => "#race_stats", "data-toggle" => "tab"}
+/ 				Race Stats
+/ 		%li
+/ 			%a{ :href => "#map_stats", "data-toggle" => "tab"}
+/ 				Map Stats
+/ .tab-content
+/ 	.tab-pane#player_stats
+/ 		.row
+/ 			.span5
+/ 				#player_races
+/ 			.span5
+/ 				#player_teams
+/ 	.tab-pane#race_stats
+/ 		.row
+/ 			.span3
+/ 				#terran_stats
+/ 			.span3
+/ 				#protoss_stats
+/ 			.span3
+/ 				#zerg_stats
+/ 	.tab-pane#map_stats
+
+%h1.pagetitle
+	%span Player Stats
 .row
 	.span6
-		#races
+		#player_races
 	.span6
-		#teams
+		#player_teams
+= race_stats
+= team_stats
+
+%h1.pagetitle
+	%span Race Stats
+.row
+	.span4
+		#terran_stats
+	.span4
+		#protoss_stats
+	.span4
+		#zerg_stats
+= race_matchup_stats
+
+%h1.pagetitle
+	%span Map Stats
+- count = 0
+- while count < @maps.count
+	.row
+		- 3.times do
+			- count += 1
+			- currentmap = @maps.keys[count]
+			- if currentmap
+				.span4
+					%div{ :id => "#{currentmap.name.gsub(' ','_')}" }
+						= map_stats(currentmap)
+
+/ .tabbable
+/ 	%ul.nav.nav-tabs
+/ 		%li
+/ 			%a{ :href => "#1A", "data-toggle" => "tab" }
+/ 				1A
+/ 		%li
+/ 			%a{ :href => "#1B", "data-toggle" => "tab" }
+/ 				1B
+/ 	.tab-content
+/ 		.tab-pane#1A
+/ 			1A
+/ 		.tab-pane#1B
+/ 			1B
+

@@ -64,7 +64,7 @@ data = {"league"=>["2012", "GSL", "Season 2"],
        "bo3"=>
         {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~oGs~TheStC"},
          "game2"=>
-          {"map"=>"Atlanthis Spaceship", "winner"=>"Zerg~MVP~DongRaeGu"},
+          {"map"=>"Atlantis Spaceship", "winner"=>"Zerg~MVP~DongRaeGu"},
          "game3"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~oGs~TheStC"}}},
      "match2"=>
       {"players"=>["Terran~Liquid~TaeJa", "Terran~NSH~Jjakji"],

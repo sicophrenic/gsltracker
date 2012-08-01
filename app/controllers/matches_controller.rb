@@ -25,7 +25,7 @@ class MatchesController < ApplicationController
     else
       @bestof = 7
     end
-    @registrations = [] << Registration.find_by_player_id(@match.players[0]) << Registration.find_by_player_id(@match.players[1])
+    @registrations = [] << Registration.find_by_player_id_and_tournament_id(@match.players[0],@tournament) << Registration.find_by_player_id_and_tournament_id(@match.players[1],@tournament)
   end
 
   def new

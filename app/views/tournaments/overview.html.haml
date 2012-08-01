@@ -1,0 +1,23 @@
+%img.banner{ :src => @tournament.banner }
+
+%h1.pagetitle
+	%span Tournament Info:
+%h3 Year: #{@tournament.year}
+%h3 League: #{@tournament.league}
+%h3 Season: #{@tournament.year}
+
+/ Race/Team Stat Overview
+/ %h1.pagetitle
+/ 	%span Player Stats
+/ .row
+/ 	.span6
+/ 		#races
+/ 	.span6
+/ 		#teams
+/ = race_stats
+/ = team_stats
+
+%h1.pagetitle
+	%span Map Pool:
+- @maps.each do |map|
+	%h3 #{map.name}
