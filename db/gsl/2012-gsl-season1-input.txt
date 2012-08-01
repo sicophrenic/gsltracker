@@ -1,0 +1,619 @@
+2012|GSL|Season 1
+http://img.gomtv.net/imgdata/44380.jpg
+Antiga Shipyard
+Bel'Shir Beach
+Cloud Kingdom
+Crossfire SE
+Daybreak
+Dual Sight
+Entombed Valley
+Metropolis
+0
+oGs~InCa
+MVP~Genius
+StarTale~PartinG
+SlayerS~Puzzle
+SlayerS~Brown
+EG~JYP
+FXO~Oz
+SK~MC
+0
+oGs~Fin
+oGs~SuperNoVa
+oGs~NaDa
+Fnatic~aLive
+NSH~Jjakji
+IM~Mvp
+IM~Happy
+MVP~sC
+MVP~Keen
+StarTale~Bomber
+SlayerS~MMA
+SlayerS~Ganzi
+SlayerS~BoxeR
+Prime~MarineKing
+FXO~GuMiho
+0
+Liquid~Zenio
+IM~NesTea
+GamaBears~Sen
+MVP~DongRaeGu
+StarTale~Curious
+SlayerS~YuGiOh
+EG~IdrA
+FXO~Leenock
+FXO~Lucky
+0
+32
+jjakji
+sen
+dual sight
+jjakji
+daybreak
+jjakji
+
+
+boxer
+ganzi
+cloud kingdom
+boxer
+metropolis
+ganzi
+dual sight
+ganzi
+jjakji
+ganzi
+entombed valley
+ganzi
+antiga shipyard
+ganzi
+
+
+sen
+boxer
+entombed valley
+boxer
+daybreak
+boxer
+
+
+jjakji
+boxer
+bel'shir beach
+boxer
+dual sight
+jjakji
+antiga shipyard
+jjakji
+leenock
+fin
+daybreak
+leenock
+dual sight
+leenock
+
+
+supernova
+mc
+crossfire se
+supernova
+daybreak
+mc
+antiga shipyard
+supernova
+leenock
+supernova
+bel'shir beach
+leenock
+antiga shipyard
+supernova
+daybreak
+supernova
+fin
+mc
+bel'shir beach
+fin
+daybreak
+mc
+metropolis
+mc
+leenock
+mc
+cloud kingdom
+mc
+bel'shir beach
+leenock
+daybreak
+mc
+mvp
+lucky
+entombed valley
+mvp
+cloud kingdom
+mvp
+
+
+idra
+nestea
+dual sight
+nestea
+bel'shir beach
+nestea
+
+
+mvp
+nestea
+daybreak
+mvp
+bel'shir beach
+nestea
+entombed valley
+nestea
+lucky
+idra
+daybreak
+idra
+metropolis
+lucky
+antiga shipyard
+lucky
+mvp
+lucky
+bel'shir beach
+lucky
+antiga shipyard
+mvp
+daybreak
+mvp
+oz
+curious
+daybreak
+oz
+bel'shir beach
+oz
+
+
+bomber
+inca
+cloud kingdom
+inca
+daybreak
+inca
+
+
+oz
+inca
+antiga shipyard
+oz
+crossfire se
+inca
+dual sight
+oz
+curious
+bomber
+antiga shipyard
+bomber
+bel'shir beach
+curious
+daybreak
+curious
+inca
+curious
+crossfire se
+curious
+entombed valley
+curious
+
+
+mma
+gumiho
+metropolis
+mma
+crossfire se
+mma
+
+
+yugioh
+zenio
+cloud kingdom
+zenio
+daybreak
+zenio
+
+
+mma
+zenio
+entombed valley
+mma
+bel'shir beanch
+mma
+
+
+gumiho
+yugioh
+entombed valley
+yugioh
+crossfire se
+gumiho
+antiga shipyard
+gumiho
+zenio
+gumiho
+daybreak
+zenio
+cloud kingdom
+gumiho
+bel'shir beach
+gumiho
+sc
+jyp
+metropolis
+sc
+daybreak
+sc
+
+
+dongraegu
+genius
+antiga shipyard
+genius
+bel'shir beach
+genius
+
+
+sc
+genius
+daybreak
+genius
+bel'shir beach
+genius
+
+
+jyp
+dongraegu
+daybreak
+dongraegu
+metropolis
+dongraegu
+
+
+sc
+dongraegu
+cloud kingdom
+dongraegu
+daybreak
+sc
+dual sight
+dongraegu
+alive
+brown
+bel'shir beach
+alive
+entombed valley
+brown
+crossfire se
+alive
+happy
+marineking
+antiga shipyard
+marineking
+daybreak
+marineking
+
+
+alive
+marineking
+cloud kingdom
+marineking
+dual sight
+marineking
+
+
+brown
+happy
+cloud kingdom
+happy
+daybreak
+happy
+
+
+alive
+happy
+metropolis
+alive
+daybreak
+alive
+
+
+puzzle
+parting
+entombed valley
+parting
+daybreak
+puzzle
+bel'shir beach
+parting
+keen
+nada
+antiga shipyard
+nada
+cloud kingdom
+keen
+entombed valley
+nada
+parting
+nada
+daybreak
+parting
+entombed valley
+nada
+cloud kingdom
+parting
+puzzle
+keen
+daybreak
+puzzle
+metropolis
+puzzle
+
+
+nada
+puzzle
+dual sight
+puzzle
+entombed valley
+puzzle
+
+
+16
+mvp
+gumiho
+dual sight
+gumiho
+daybreak
+gumiho
+
+
+curious
+alive
+bel'shir beach
+alive
+crossfire se
+alive
+
+
+gumiho
+alive
+cloud kingdom
+alive
+entombed valley
+alive
+
+
+mvp
+curious
+cloud kingdom
+curious
+antiga shipyard
+mvp
+crossfire se
+mvp
+gumiho
+mvp
+entombed valley
+mvp
+antiga shipyard
+gumiho
+cloud kingdom
+gumiho
+mma
+oz
+bel'shir beach
+oz
+crossfire se
+mma
+entombed valley
+mma
+puzzle
+supernova
+daybreak
+puzzle
+crossfire se
+puzzle
+
+
+mma
+puzzle
+metropolis
+mma
+daybreak
+puzzle
+crossfire se
+puzzle
+oz
+supernova
+metropolis
+oz
+bel'shir beach
+supernova
+daybreak
+oz
+mma
+oz
+antiga shipyard
+oz
+bel'shir beach
+mma
+daybreak
+mma
+mc
+ganzi
+entombed valley
+mc
+bel'shir beach
+mc
+
+
+jjakji
+parting
+metropolis
+parting
+dual sight
+jjakji
+daybreak
+parting
+mc
+parting
+bel'shir beach
+mc
+entombed valley
+mc
+
+
+ganzi
+jjakji
+bel'shir beach
+jjakji
+dual sight
+jjakji
+
+
+parting
+jjakji
+cloud kingdom
+parting
+antiga shipyard
+parting
+
+
+nestea
+dongraegu
+crossfirese
+nestea
+dual sight
+dongraegu
+antiga shipyard
+dongraegu
+marineking
+genius
+dual sight
+marineking
+daybreak
+marineking
+
+
+dongraegu
+marineking
+daybreak
+dongraegu
+antiga shipyard
+dongraegu
+
+
+nestea
+genius
+daybreak
+nestea
+entombed valley
+genius
+bel'shir beach
+genius
+marineking
+genius
+bel'shir beach
+marineking
+antiga shipyard
+genius
+dual sight
+genius
+8
+alive
+mma
+dual sight
+alive
+entombed valley
+mma
+crossfire se
+alive
+daybreak
+alive
+
+
+gumiho
+puzzle
+metropolis
+gumiho
+bel'shir beach
+puzzle
+cloud kingdom
+gumiho
+dual sight
+gumiho
+
+
+mc
+genius
+dual sight
+genius
+cloud kingdom
+genius
+entombed valley
+genius
+
+
+
+
+parting
+dongraegu
+antiga shipyard
+dongraegu
+daybreak
+dongraegu
+crossfire se
+dongraegu
+
+
+
+
+4
+alive
+genius
+entombed valley
+genius
+metropolis
+genius
+antiga shipyard
+genius
+
+
+
+
+gumiho
+dongraegu
+cloud kingdom
+gumiho
+entombed valley
+gumiho
+daybreak
+dongraegu
+dual sight
+dongraegu
+metropolis
+dongraegu
+2
+genius
+dongraegu
+daybreak
+genius
+antiga shipyard
+dongraegu
+cloud kingdom
+genius
+entombed valley
+dongraegu
+metropolis
+dongraegu
+crossfire se
+dongraegu
+
+
