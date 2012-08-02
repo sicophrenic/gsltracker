@@ -354,4 +354,4 @@ def parse_games(players, data, round)
 	games
 end
 
-parse_data('gsl.html')
+parse_data('2012-gsl-season3.html')
