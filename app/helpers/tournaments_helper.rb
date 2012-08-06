@@ -79,7 +79,6 @@ module TournamentsHelper
 						}
 					},
 					yAxis: {
-						opposite: true,
 						min: 0,
 						title: {
 							text: 'Number of Players',
@@ -256,6 +255,9 @@ module TournamentsHelper
 			});"
 	end
 	def map_stats(map)
+		if map.name == "Bel'Shir Beach"
+			map.name = "Bel'Shir Beach"
+		end
 		javascript_tag "var pie;
 			$( function() {
 				pie = new Highcharts.Chart({

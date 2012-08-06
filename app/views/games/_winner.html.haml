@@ -5,20 +5,20 @@
 				.winner
 					%p.team #{@reg.team}
 					%p.name #{@reg.player.name}
-					%img{ :src => "/assets/#{@reg.race}Large.png"}
+					%img{ :src => "/assets/races/#{@reg.race}Large.png"}
 					%p.map #{@game.map.name}
 				.champion
-					%img{ :src => "/assets/Champion.png"}
+					%img{ :src => "/assets/progression/Champion.png"}
 		- elsif (@gameno == @match.games.count && @group == nil) || (@gameno == @match.games.count && @group != nil && (@matchno == 3 || @matchno == 5))
 			.advances
 				%p.team #{@reg.team}
 				%p.name #{@reg.player.name}
-				%img.race{ :src => "/assets/#{@reg.race}.png"}
-				%img.roundof{ :src => "/assets/Advances#{@round.roundof}.png"}
+				%img.race{ :src => "/assets/races/#{@reg.race}.png"}
+				%img.roundof{ :src => "/assets/progression/Advances#{@round.roundof}.png"}
 				%p.map #{@game.map.name}
 		- else
 			.matchup
 				%p.team #{@reg.team}
 				%p.name #{@reg.player.name}
-				%img{ :src => "/assets/#{@reg.race}.png"}
+				%img{ :src => "/assets/races/#{@reg.race}.png"}
 				%p.map #{@game.map.name}

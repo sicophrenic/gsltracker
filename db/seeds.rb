@@ -15,7 +15,7 @@ inputdata = [
  "banner"=>"http://img.gomtv.net/imgdata/44380.jpg",
  "maps"=>
   ["Antiga Shipyard",
-   "Bel'Shir Beach",
+   "BelShir Beach",
    "Cloud Kingdom",
    "Crossfire SE",
    "Daybreak",
@@ -85,7 +85,7 @@ inputdata = [
      "tiebreak"=>
       {"players"=>["Terran~NSH~Jjakji", "Terran~SlayerS~BoxeR"],
        "bo3"=>
-        {"game1"=>{"map"=>"Bel'Shir Beach", "winner"=>"Terran~SlayerS~BoxeR"},
+        {"game1"=>{"map"=>"BelShir Beach", "winner"=>"Terran~SlayerS~BoxeR"},
          "game2"=>{"map"=>"Dual Sight", "winner"=>"Terran~NSH~Jjakji"},
          "game3"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~NSH~Jjakji"}}}},
    "groupB"=>
@@ -106,20 +106,20 @@ inputdata = [
      "winners"=>
       {"players"=>["Zerg~FXO~Leenock", "Terran~oGs~SuperNoVa"],
        "bo3"=>
-        {"game1"=>{"map"=>"Bel'Shir Beach", "winner"=>"Zerg~FXO~Leenock"},
+        {"game1"=>{"map"=>"BelShir Beach", "winner"=>"Zerg~FXO~Leenock"},
          "game2"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~oGs~SuperNoVa"},
          "game3"=>{"map"=>"Daybreak", "winner"=>"Terran~oGs~SuperNoVa"}}},
      "losers"=>
       {"players"=>["Terran~oGs~Fin", "Protoss~SK~MC"],
        "bo3"=>
-        {"game1"=>{"map"=>"Bel'Shir Beach", "winner"=>"Terran~oGs~Fin"},
+        {"game1"=>{"map"=>"BelShir Beach", "winner"=>"Terran~oGs~Fin"},
          "game2"=>{"map"=>"Daybreak", "winner"=>"Protoss~SK~MC"},
          "game3"=>{"map"=>"Metropolis", "winner"=>"Protoss~SK~MC"}}},
      "tiebreak"=>
       {"players"=>["Zerg~FXO~Leenock", "Protoss~SK~MC"],
        "bo3"=>
         {"game1"=>{"map"=>"Cloud Kingdom", "winner"=>"Protoss~SK~MC"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Zerg~FXO~Leenock"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Zerg~FXO~Leenock"},
          "game3"=>{"map"=>"Daybreak", "winner"=>"Protoss~SK~MC"}}}},
    "groupC"=>
     {"round"=>"ro32",
@@ -133,13 +133,13 @@ inputdata = [
       {"players"=>["Zerg~EG~IdrA", "Zerg~IM~NesTea"],
        "bo3"=>
         {"game1"=>{"map"=>"Dual Sight", "winner"=>"Zerg~IM~NesTea"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Zerg~IM~NesTea"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Zerg~IM~NesTea"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "winners"=>
       {"players"=>["Terran~IM~Mvp", "Zerg~IM~NesTea"],
        "bo3"=>
         {"game1"=>{"map"=>"Daybreak", "winner"=>"Terran~IM~Mvp"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Zerg~IM~NesTea"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Zerg~IM~NesTea"},
          "game3"=>{"map"=>"Entombed Valley", "winner"=>"Zerg~IM~NesTea"}}},
      "losers"=>
       {"players"=>["Zerg~FXO~Lucky", "Zerg~EG~IdrA"],
@@ -150,7 +150,7 @@ inputdata = [
      "tiebreak"=>
       {"players"=>["Terran~IM~Mvp", "Zerg~FXO~Lucky"],
        "bo3"=>
-        {"game1"=>{"map"=>"Bel'Shir Beach", "winner"=>"Zerg~FXO~Lucky"},
+        {"game1"=>{"map"=>"BelShir Beach", "winner"=>"Zerg~FXO~Lucky"},
          "game2"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~IM~Mvp"},
          "game3"=>{"map"=>"Daybreak", "winner"=>"Terran~IM~Mvp"}}}},
    "groupD"=>
@@ -159,7 +159,7 @@ inputdata = [
       {"players"=>["Protoss~FXO~Oz", "Zerg~StarTale~Curious"],
        "bo3"=>
         {"game1"=>{"map"=>"Daybreak", "winner"=>"Protoss~FXO~Oz"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Protoss~FXO~Oz"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Protoss~FXO~Oz"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "match2"=>
       {"players"=>["Terran~StarTale~Bomber", "Protoss~oGs~InCa"],
@@ -178,7 +178,7 @@ inputdata = [
        "bo3"=>
         {"game1"=>
           {"map"=>"Antiga Shipyard", "winner"=>"Terran~StarTale~Bomber"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Zerg~StarTale~Curious"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Zerg~StarTale~Curious"},
          "game3"=>{"map"=>"Daybreak", "winner"=>"Zerg~StarTale~Curious"}}},
      "tiebreak"=>
       {"players"=>["Protoss~oGs~InCa", "Zerg~StarTale~Curious"],
@@ -205,7 +205,7 @@ inputdata = [
       {"players"=>["Terran~SlayerS~MMA", "Zerg~Liquid~Zenio"],
        "bo3"=>
         {"game1"=>{"map"=>"Entombed Valley", "winner"=>"Terran~SlayerS~MMA"},
-         "game2"=>{"map"=>"", "winner"=>"Terran~SlayerS~MMA"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Terran~SlayerS~MMA"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "losers"=>
       {"players"=>["Terran~FXO~GuMiho", "Zerg~SlayerS~YuGiOh"],
@@ -218,7 +218,7 @@ inputdata = [
        "bo3"=>
         {"game1"=>{"map"=>"Daybreak", "winner"=>"Zerg~Liquid~Zenio"},
          "game2"=>{"map"=>"Cloud Kingdom", "winner"=>"Terran~FXO~GuMiho"},
-         "game3"=>{"map"=>"Bel'Shir Beach", "winner"=>"Terran~FXO~GuMiho"}}}},
+         "game3"=>{"map"=>"BelShir Beach", "winner"=>"Terran~FXO~GuMiho"}}}},
    "groupF"=>
     {"round"=>"ro32",
      "match1"=>
@@ -231,13 +231,13 @@ inputdata = [
       {"players"=>["Zerg~MVP~DongRaeGu", "Protoss~MVP~Genius"],
        "bo3"=>
         {"game1"=>{"map"=>"Antiga Shipyard", "winner"=>"Protoss~MVP~Genius"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Protoss~MVP~Genius"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Protoss~MVP~Genius"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "winners"=>
       {"players"=>["Terran~MVP~sC", "Protoss~MVP~Genius"],
        "bo3"=>
         {"game1"=>{"map"=>"Daybreak", "winner"=>"Protoss~MVP~Genius"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Protoss~MVP~Genius"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Protoss~MVP~Genius"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "losers"=>
       {"players"=>["Protoss~EG~JYP", "Zerg~MVP~DongRaeGu"],
@@ -256,7 +256,7 @@ inputdata = [
      "match1"=>
       {"players"=>["Terran~Fnatic~aLive", "Protoss~SlayerS~Brown"],
        "bo3"=>
-        {"game1"=>{"map"=>"Bel'Shir Beach", "winner"=>"Terran~Fnatic~aLive"},
+        {"game1"=>{"map"=>"BelShir Beach", "winner"=>"Terran~Fnatic~aLive"},
          "game2"=>
           {"map"=>"Entombed Valley", "winner"=>"Protoss~SlayerS~Brown"},
          "game3"=>{"map"=>"Crossfire SE", "winner"=>"Terran~Fnatic~aLive"}}},
@@ -295,7 +295,7 @@ inputdata = [
           {"map"=>"Entombed Valley", "winner"=>"Protoss~StarTale~PartinG"},
          "game2"=>{"map"=>"Daybreak", "winner"=>"Protoss~SlayerS~Puzzle"},
          "game3"=>
-          {"map"=>"Bel'Shir Beach", "winner"=>"Protoss~StarTale~PartinG"}}},
+          {"map"=>"BelShir Beach", "winner"=>"Protoss~StarTale~PartinG"}}},
      "match2"=>
       {"players"=>["Terran~MVP~Keen", "Terran~oGs~NaDa"],
        "bo3"=>
@@ -334,7 +334,7 @@ inputdata = [
      "match2"=>
       {"players"=>["Zerg~StarTale~Curious", "Terran~Fnatic~aLive"],
        "bo3"=>
-        {"game1"=>{"map"=>"Bel'Shir Beach", "winner"=>"Terran~Fnatic~aLive"},
+        {"game1"=>{"map"=>"BelShir Beach", "winner"=>"Terran~Fnatic~aLive"},
          "game2"=>{"map"=>"Crossfire SE", "winner"=>"Terran~Fnatic~aLive"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "winners"=>
@@ -360,7 +360,7 @@ inputdata = [
      "match1"=>
       {"players"=>["Terran~SlayerS~MMA", "Protoss~FXO~Oz"],
        "bo3"=>
-        {"game1"=>{"map"=>"Bel'Shir Beach", "winner"=>"Protoss~FXO~Oz"},
+        {"game1"=>{"map"=>"BelShir Beach", "winner"=>"Protoss~FXO~Oz"},
          "game2"=>{"map"=>"Crossfire SE", "winner"=>"Terran~SlayerS~MMA"},
          "game3"=>{"map"=>"Entombed Valley", "winner"=>"Terran~SlayerS~MMA"}}},
      "match2"=>
@@ -380,13 +380,13 @@ inputdata = [
       {"players"=>["Protoss~FXO~Oz", "Terran~oGs~SuperNoVa"],
        "bo3"=>
         {"game1"=>{"map"=>"Metropolis", "winner"=>"Protoss~FXO~Oz"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Terran~oGs~SuperNoVa"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Terran~oGs~SuperNoVa"},
          "game3"=>{"map"=>"Daybreak", "winner"=>"Protoss~FXO~Oz"}}},
      "tiebreak"=>
       {"players"=>["Terran~SlayerS~MMA", "Protoss~FXO~Oz"],
        "bo3"=>
         {"game1"=>{"map"=>"Antiga Shipyard", "winner"=>"Protoss~FXO~Oz"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Terran~SlayerS~MMA"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Terran~SlayerS~MMA"},
          "game3"=>{"map"=>"Daybreak", "winner"=>"Terran~SlayerS~MMA"}}}},
    "groupC"=>
     {"round"=>"ro16",
@@ -394,7 +394,7 @@ inputdata = [
       {"players"=>["Protoss~SK~MC", "Terran~SlayerS~Ganzi"],
        "bo3"=>
         {"game1"=>{"map"=>"Entombed Valley", "winner"=>"Protoss~SK~MC"},
-         "game2"=>{"map"=>"Bel'Shir Beach", "winner"=>"Protoss~SK~MC"},
+         "game2"=>{"map"=>"BelShir Beach", "winner"=>"Protoss~SK~MC"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "match2"=>
       {"players"=>["Terran~NSH~Jjakji", "Protoss~StarTale~PartinG"],
@@ -405,13 +405,13 @@ inputdata = [
      "winners"=>
       {"players"=>["Protoss~SK~MC", "Protoss~StarTale~PartinG"],
        "bo3"=>
-        {"game1"=>{"map"=>"Bel'Shir Beach", "winner"=>"Protoss~SK~MC"},
+        {"game1"=>{"map"=>"BelShir Beach", "winner"=>"Protoss~SK~MC"},
          "game2"=>{"map"=>"Entombed Valley", "winner"=>"Protoss~SK~MC"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "losers"=>
       {"players"=>["Terran~SlayerS~Ganzi", "Terran~NSH~Jjakji"],
        "bo3"=>
-        {"game1"=>{"map"=>"Bel'Shir Beach", "winner"=>"Terran~NSH~Jjakji"},
+        {"game1"=>{"map"=>"BelShir Beach", "winner"=>"Terran~NSH~Jjakji"},
          "game2"=>{"map"=>"Dual Sight", "winner"=>"Terran~NSH~Jjakji"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "tiebreak"=>
@@ -427,7 +427,7 @@ inputdata = [
      "match1"=>
       {"players"=>["Zerg~IM~NesTea", "Zerg~MVP~DongRaeGu"],
        "bo3"=>
-        {"game1"=>{"map"=>"", "winner"=>"Zerg~IM~NesTea"},
+        {"game1"=>{"map"=>"Crossfire SE", "winner"=>"Zerg~IM~NesTea"},
          "game2"=>{"map"=>"Dual Sight", "winner"=>"Zerg~MVP~DongRaeGu"},
          "game3"=>{"map"=>"Antiga Shipyard", "winner"=>"Zerg~MVP~DongRaeGu"}}},
      "match2"=>
@@ -447,12 +447,12 @@ inputdata = [
        "bo3"=>
         {"game1"=>{"map"=>"Daybreak", "winner"=>"Zerg~IM~NesTea"},
          "game2"=>{"map"=>"Entombed Valley", "winner"=>"Protoss~MVP~Genius"},
-         "game3"=>{"map"=>"Bel'Shir Beach", "winner"=>"Protoss~MVP~Genius"}}},
+         "game3"=>{"map"=>"BelShir Beach", "winner"=>"Protoss~MVP~Genius"}}},
      "tiebreak"=>
       {"players"=>["Terran~Prime~MarineKing", "Protoss~MVP~Genius"],
        "bo3"=>
         {"game1"=>
-          {"map"=>"Bel'Shir Beach", "winner"=>"Terran~Prime~MarineKing"},
+          {"map"=>"BelShir Beach", "winner"=>"Terran~Prime~MarineKing"},
          "game2"=>{"map"=>"Antiga Shipyard", "winner"=>"Protoss~MVP~Genius"},
          "game3"=>{"map"=>"Dual Sight", "winner"=>"Protoss~MVP~Genius"}}}}},
  "ro8"=>
@@ -471,7 +471,7 @@ inputdata = [
        "bo5"=>
         {"game1"=>{"map"=>"Metropolis", "winner"=>"Terran~FXO~GuMiho"},
          "game2"=>
-          {"map"=>"Bel'Shir Beach", "winner"=>"Protoss~SlayerS~Puzzle"},
+          {"map"=>"BelShir Beach", "winner"=>"Protoss~SlayerS~Puzzle"},
          "game3"=>{"map"=>"Cloud Kingdom", "winner"=>"Terran~FXO~GuMiho"},
          "game4"=>{"map"=>"Dual Sight", "winner"=>"Terran~FXO~GuMiho"},
          "game5"=>{"map"=>"", "winner"=>nil}}},
@@ -534,7 +534,7 @@ inputdata = [
    "Dual Sight",
    "Entombed Valley",
    "Metropolis",
-   "ESV Ohana",
+   "Ohana",
    "Atlantis Spaceship"],
  "players"=>
   {"Genius"=>"Protoss~MVP~Genius",
@@ -575,7 +575,7 @@ inputdata = [
      "match1"=>
       {"players"=>["Zerg~MVP~DongRaeGu", "Terran~oGs~TheStC"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~oGs~TheStC"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~oGs~TheStC"},
          "game2"=>
           {"map"=>"Atlantis Spaceship", "winner"=>"Zerg~MVP~DongRaeGu"},
          "game3"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~oGs~TheStC"}}},
@@ -634,7 +634,7 @@ inputdata = [
      "tiebreak"=>
       {"players"=>["Protoss~MVP~Genius", "Protoss~IM~Seed"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~MVP~Genius"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Protoss~MVP~Genius"},
          "game2"=>{"map"=>"Daybreak", "winner"=>"Protoss~IM~Seed"},
          "game3"=>{"map"=>"Cloud Kingdom", "winner"=>"Protoss~MVP~Genius"}}}},
    "groupC"=>
@@ -711,7 +711,7 @@ inputdata = [
      "match1"=>
       {"players"=>["Protoss~SK~MC", "Terran~StarTale~Virus"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~StarTale~Virus"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~StarTale~Virus"},
          "game2"=>{"map"=>"Daybreak", "winner"=>"Protoss~SK~MC"},
          "game3"=>{"map"=>"Dual Sight", "winner"=>"Terran~StarTale~Virus"}}},
      "match2"=>
@@ -757,13 +757,13 @@ inputdata = [
      "winners"=>
       {"players"=>["Protoss~StarTale~Squirtle", "Zerg~FXO~Leenock"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~StarTale~Squirtle"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Protoss~StarTale~Squirtle"},
          "game2"=>{"map"=>"Dual Sight", "winner"=>"Protoss~StarTale~Squirtle"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "losers"=>
       {"players"=>["Terran~SlayerS~MMA", "Terran~compLexity~NaDa"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~SlayerS~MMA"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~SlayerS~MMA"},
          "game2"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~SlayerS~MMA"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "tiebreak"=>
@@ -777,14 +777,14 @@ inputdata = [
      "match1"=>
       {"players"=>["Protoss~SlayerS~Puzzle", "Protoss~Quantic~NaNiwa"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~SlayerS~Puzzle"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Protoss~SlayerS~Puzzle"},
          "game2"=>{"map"=>"Cloud Kingdom", "winner"=>"Protoss~Quantic~NaNiwa"},
          "game3"=>{"map"=>"Daybreak", "winner"=>"Protoss~Quantic~NaNiwa"}}},
      "match2"=>
       {"players"=>["Terran~SlayerS~Ryung", "Terran~IM~Mvp"],
        "bo3"=>
         {"game1"=>{"map"=>"Dual Sight", "winner"=>"Terran~SlayerS~Ryung"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Terran~SlayerS~Ryung"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Terran~SlayerS~Ryung"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "winners"=>
       {"players"=>["Protoss~Quantic~NaNiwa", "Terran~SlayerS~Ryung"],
@@ -846,26 +846,26 @@ inputdata = [
        "bo3"=>
         {"game1"=>
           {"map"=>"Antiga Shipyard", "winner"=>"Protoss~Quantic~NaNiwa"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~Quantic~NaNiwa"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Protoss~Quantic~NaNiwa"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "match2"=>
       {"players"=>["Terran~oGs~SuperNoVa", "Terran~StarTale~Virus"],
        "bo3"=>
         {"game1"=>{"map"=>"Dual Sight", "winner"=>"Terran~oGs~SuperNoVa"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Terran~StarTale~Virus"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Terran~StarTale~Virus"},
          "game3"=>
           {"map"=>"Cloud Kingdom", "winner"=>"Terran~StarTale~Virus"}}},
      "winners"=>
       {"players"=>["Protoss~Quantic~NaNiwa", "Terran~StarTale~Virus"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~Quantic~NaNiwa"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Protoss~Quantic~NaNiwa"},
          "game2"=>
           {"map"=>"Antiga Shipyard", "winner"=>"Protoss~Quantic~NaNiwa"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "losers"=>
       {"players"=>["Protoss~MVP~Genius", "Terran~oGs~SuperNoVa"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~oGs~SuperNoVa"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~oGs~SuperNoVa"},
          "game2"=>{"map"=>"Daybreak", "winner"=>"Terran~oGs~SuperNoVa"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "tiebreak"=>
@@ -879,7 +879,7 @@ inputdata = [
      "match1"=>
       {"players"=>["Terran~IM~Mvp", "Zerg~StarTale~July"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~IM~Mvp"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~IM~Mvp"},
          "game2"=>
           {"map"=>"Atlantis Spaceship", "winner"=>"Zerg~StarTale~July"},
          "game3"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~IM~Mvp"}}},
@@ -1018,7 +1018,7 @@ inputdata = [
        "bo5"=>
         {"game1"=>
           {"map"=>"Cloud Kingdom", "winner"=>"Protoss~StarTale~Squirtle"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~StarTale~Squirtle"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Protoss~StarTale~Squirtle"},
          "game3"=>
           {"map"=>"Entombed Valley", "winner"=>"Protoss~StarTale~Squirtle"},
          "game4"=>{"map"=>"", "winner"=>nil},
@@ -1030,7 +1030,7 @@ inputdata = [
       {"players"=>["Terran~IM~Mvp", "Protoss~StarTale~PartinG"],
        "bo5"=>
         {"game1"=>{"map"=>"Entombed Valley", "winner"=>"Terran~IM~Mvp"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Terran~IM~Mvp"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Terran~IM~Mvp"},
          "game3"=>
           {"map"=>"Cloud Kingdom", "winner"=>"Protoss~StarTale~PartinG"},
          "game4"=>{"map"=>"Metropolis", "winner"=>"Terran~IM~Mvp"},
@@ -1067,7 +1067,7 @@ inputdata = [
    "Daybreak",
    "Entombed Valley",
    "Metropolis",
-   "ESV Ohana",
+   "Ohana",
    "Whirlwind"],
  "players"=>
   {"Squirtle"=>"Protoss~StarTale~Squirtle",
@@ -1109,7 +1109,7 @@ inputdata = [
       {"players"=>["Protoss~Liquid~HerO", "Terran~Prime~Byun"],
        "bo3"=>
         {"game1"=>{"map"=>"Daybreak", "winner"=>"Terran~Prime~Byun"},
-         "game2"=>{"map"=>"", "winner"=>"Terran~Prime~Byun"},
+         "game2"=>{"map"=>"Cloud Kingdom", "winner"=>"Terran~Prime~Byun"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "match2"=>
       {"players"=>["Protoss~IM~Seed", "Zerg~StarTale~Curious"],
@@ -1120,13 +1120,13 @@ inputdata = [
      "winners"=>
       {"players"=>["Terran~Prime~Byun", "Protoss~IM~Seed"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~Prime~Byun"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~Prime~Byun"},
          "game2"=>{"map"=>"Entombed Valley", "winner"=>"Protoss~IM~Seed"},
          "game3"=>{"map"=>"Antiga Shipyard", "winner"=>"Terran~Prime~Byun"}}},
      "losers"=>
       {"players"=>["Protoss~Liquid~HerO", "Zerg~StarTale~Curious"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Zerg~StarTale~Curious"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Zerg~StarTale~Curious"},
          "game2"=>{"map"=>"Entombed Valley", "winner"=>"Protoss~Liquid~HerO"},
          "game3"=>{"map"=>"Whirlwind", "winner"=>"Zerg~StarTale~Curious"}}},
      "tiebreak"=>
@@ -1143,7 +1143,7 @@ inputdata = [
         {"game1"=>{"map"=>"Whirlwind", "winner"=>"Protoss~Prime~Creator"},
          "game2"=>
           {"map"=>"Entombed Valley", "winner"=>"Protoss~Quantic~NaNiwa"},
-         "game3"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~Prime~Creator"}}},
+         "game3"=>{"map"=>"Ohana", "winner"=>"Protoss~Prime~Creator"}}},
      "match2"=>
       {"players"=>["Zerg~IM~NesTea", "Terran~Quantic~TheStC"],
        "bo3"=>
@@ -1219,7 +1219,7 @@ inputdata = [
        "bo3"=>
         {"game1"=>{"map"=>"Entombed Valley", "winner"=>"Terran~IM~Happy"},
          "game2"=>{"map"=>"Cloud Kingdom", "winner"=>"Protoss~~Genius"},
-         "game3"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~~Genius"}}},
+         "game3"=>{"map"=>"Ohana", "winner"=>"Protoss~~Genius"}}},
      "winners"=>
       {"players"=>["Terran~IM~Mvp", "Protoss~~Genius"],
        "bo3"=>
@@ -1230,12 +1230,12 @@ inputdata = [
       {"players"=>["Zerg~Zenex~SuHoSin", "Terran~IM~Happy"],
        "bo3"=>
         {"game1"=>{"map"=>"Whirlwind", "winner"=>"Terran~IM~Happy"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Terran~IM~Happy"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Terran~IM~Happy"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "tiebreak"=>
       {"players"=>["Terran~IM~Mvp", "Terran~IM~Happy"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~IM~Mvp"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~IM~Mvp"},
          "game2"=>{"map"=>"Entombed Valley", "winner"=>"Terran~IM~Mvp"},
          "game3"=>{"map"=>"", "winner"=>nil}}}},
    "groupE"=>
@@ -1249,7 +1249,7 @@ inputdata = [
      "match2"=>
       {"players"=>["Terran~compLexity~Ganzi", "Protoss~SK~MC"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~compLexity~Ganzi"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~compLexity~Ganzi"},
          "game2"=>{"map"=>"Daybreak", "winner"=>"Terran~compLexity~Ganzi"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "winners"=>
@@ -1285,7 +1285,7 @@ inputdata = [
         {"game1"=>{"map"=>"Whirlwind", "winner"=>"Zerg~SlayerS~YuGiOh"},
          "game2"=>
           {"map"=>"Entombed Valley", "winner"=>"Terran~Prime~MarineKing"},
-         "game3"=>{"map"=>"ESV Ohana", "winner"=>"Terran~Prime~MarineKing"}}},
+         "game3"=>{"map"=>"Ohana", "winner"=>"Terran~Prime~MarineKing"}}},
      "winners"=>
       {"players"=>["Zerg~TSL~Symbol", "Terran~Prime~MarineKing"],
        "bo3"=>
@@ -1296,7 +1296,7 @@ inputdata = [
       {"players"=>["Protoss~StarTale~PartinG", "Zerg~SlayerS~YuGiOh"],
        "bo3"=>
         {"game1"=>{"map"=>"Metropolis", "winner"=>"Protoss~StarTale~PartinG"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Zerg~SlayerS~YuGiOh"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Zerg~SlayerS~YuGiOh"},
          "game3"=>
           {"map"=>"Entombed Valley", "winner"=>"Protoss~StarTale~PartinG"}}},
      "tiebreak"=>
@@ -1312,7 +1312,7 @@ inputdata = [
      "match1"=>
       {"players"=>["Zerg~Empire~viOLet", "Protoss~Fnatic~Oz"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Zerg~Empire~viOLet"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Zerg~Empire~viOLet"},
          "game2"=>{"map"=>"Cloud Kingdom", "winner"=>"Zerg~Empire~viOLet"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "match2"=>
@@ -1358,13 +1358,13 @@ inputdata = [
      "winners"=>
       {"players"=>["Protoss~StarTale~Ace", "Terran~SlayerS~Ryung"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~SlayerS~Ryung"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~SlayerS~Ryung"},
          "game2"=>{"map"=>"Metropolis", "winner"=>"Terran~SlayerS~Ryung"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "losers"=>
       {"players"=>["Terran~Liquid~TaeJa", "Zerg~FXO~Leenock"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Terran~Liquid~TaeJa"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Terran~Liquid~TaeJa"},
          "game2"=>{"map"=>"Daybreak", "winner"=>"Terran~Liquid~TaeJa"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "tiebreak"=>
@@ -1399,7 +1399,7 @@ inputdata = [
       {"players"=>["Terran~IM~Mvp", "Zerg~Empire~viOLet"],
        "bo3"=>
         {"game1"=>{"map"=>"Whirlwind", "winner"=>"Zerg~Empire~viOLet"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Zerg~Empire~viOLet"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Zerg~Empire~viOLet"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "tiebreak"=>
       {"players"=>["Terran~Liquid~TaeJa", "Zerg~Empire~viOLet"],
@@ -1419,7 +1419,7 @@ inputdata = [
      "match2"=>
       {"players"=>["Terran~Prime~MarineKing", "Protoss~SK~MC"],
        "bo3"=>
-        {"game1"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~SK~MC"},
+        {"game1"=>{"map"=>"Ohana", "winner"=>"Protoss~SK~MC"},
          "game2"=>{"map"=>"Antiga Shipyard", "winner"=>"Protoss~SK~MC"},
          "game3"=>{"map"=>"", "winner"=>nil}}},
      "winners"=>
@@ -1474,7 +1474,7 @@ inputdata = [
        "bo3"=>
         {"game1"=>{"map"=>"Cloud Kingdom", "winner"=>"Protoss~Quantic~NaNiwa"},
          "game2"=>{"map"=>"Antiga Shipyard", "winner"=>"Protoss~~Genius"},
-         "game3"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~Quantic~NaNiwa"}}}},
+         "game3"=>{"map"=>"Ohana", "winner"=>"Protoss~Quantic~NaNiwa"}}}},
    "groupD"=>
     {"round"=>"ro16",
      "match1"=>
@@ -1493,7 +1493,7 @@ inputdata = [
       {"players"=>["Zerg~MVP~DongRaeGu", "Zerg~IM~NesTea"],
        "bo3"=>
         {"game1"=>{"map"=>"Antiga Shipyard", "winner"=>"Zerg~MVP~DongRaeGu"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Zerg~IM~NesTea"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Zerg~IM~NesTea"},
          "game3"=>{"map"=>"", "winner"=>"Zerg~MVP~DongRaeGu"}}},
      "losers"=>
       {"players"=>["Terran~SlayerS~Ryung", "Terran~~SuperNoVa"],
@@ -1525,7 +1525,7 @@ inputdata = [
          "game2"=>{"map"=>"Cloud Kingdom", "winner"=>"Terran~Liquid~TaeJa"},
          "game3"=>{"map"=>"Atlantis Spaceship", "winner"=>"Protoss~SK~MC"},
          "game4"=>{"map"=>"Whirlwind", "winner"=>"Terran~Liquid~TaeJa"},
-         "game5"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~SK~MC"}}},
+         "game5"=>{"map"=>"Ohana", "winner"=>"Protoss~SK~MC"}}},
      "match3"=>
       {"players"=>["Terran~Prime~Byun", "Zerg~IM~NesTea"],
        "bo5"=>
@@ -1540,7 +1540,7 @@ inputdata = [
         {"game1"=>{"map"=>"Whirlwind", "winner"=>"Protoss~Quantic~NaNiwa"},
          "game2"=>{"map"=>"Daybreak", "winner"=>"Zerg~MVP~DongRaeGu"},
          "game3"=>{"map"=>"Entombed Valley", "winner"=>"Zerg~MVP~DongRaeGu"},
-         "game4"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~Quantic~NaNiwa"},
+         "game4"=>{"map"=>"Ohana", "winner"=>"Protoss~Quantic~NaNiwa"},
          "game5"=>
           {"map"=>"Antiga Shipyard", "winner"=>"Zerg~MVP~DongRaeGu"}}}}},
  "ro4"=>
@@ -1551,14 +1551,14 @@ inputdata = [
        "bo5"=>
         {"game1"=>{"map"=>"Antiga Shipyard", "winner"=>"Protoss~IM~Seed"},
          "game2"=>{"map"=>"Metropolis", "winner"=>"Terran~Prime~Byun"},
-         "game3"=>{"map"=>"ESV Ohana", "winner"=>"Terran~Prime~Byun"},
+         "game3"=>{"map"=>"Ohana", "winner"=>"Terran~Prime~Byun"},
          "game4"=>{"map"=>"Atlantis Spaceship", "winner"=>"Protoss~IM~Seed"},
          "game5"=>{"map"=>"Daybreak", "winner"=>"Protoss~IM~Seed"}}},
      "match2"=>
       {"players"=>["Protoss~SK~MC", "Zerg~MVP~DongRaeGu"],
        "bo5"=>
         {"game1"=>{"map"=>"Daybreak", "winner"=>"Protoss~SK~MC"},
-         "game2"=>{"map"=>"ESV Ohana", "winner"=>"Protoss~SK~MC"},
+         "game2"=>{"map"=>"Ohana", "winner"=>"Protoss~SK~MC"},
          "game3"=>{"map"=>"Antiga Shipyard", "winner"=>"Protoss~SK~MC"},
          "game4"=>{"map"=>"", "winner"=>nil},
          "game5"=>{"map"=>"", "winner"=>nil}}}}},
@@ -1591,6 +1591,11 @@ def fill_game(matchdata, gameno)
 	else
 		game = nil
 	end
+  # if game.nil?
+  #   puts gameid+": nil"
+  # else
+  #   puts gameid+": "+game.map.name+"||"+game.player.name
+  # end
 	game
 end
 def fill_matches(input, type)
@@ -1850,6 +1855,12 @@ data["maps"].each do |map|
     input = check
   end
   mappool.maps << input
+end
+MapPool.all.each do |pool|
+  if pool.maps == mappool.maps
+    mappool = pool
+    break
+  end
 end
 # mappool.maps << Map.all
 tournament.map_pool = mappool

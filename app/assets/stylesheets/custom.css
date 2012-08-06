@@ -5,6 +5,10 @@ svg {
 }
 
 /* Miscellaneous Styling for Pages */
+h1 {
+	font-size: 50px;
+	text-align: center;
+}
 .pagetitle {
 	border-bottom: 1px solid #ff6600;
 }
@@ -19,12 +23,24 @@ svg {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.league {
+	font-family: 'Helvetica';
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 100px;
+}
+.maps {
+	width: 500px;
 }
 .navbtn {
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 0px;
-	margin-top: 5px;
+	margin-top: 15px;
 	margin-bottom: 5px;
 	margin-left: -20px;
 }

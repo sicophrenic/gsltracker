@@ -56,8 +56,8 @@
 - while count < @maps.count
 	.row
 		- 3.times do
-			- count += 1
 			- currentmap = @maps.keys[count]
+			- count += 1
 			- if currentmap
 				.span4
 					%div{ :id => "#{currentmap.name.gsub(' ','_')}" }

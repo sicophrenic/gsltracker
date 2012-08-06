@@ -1,11 +1,5 @@
 %img.banner{ :src => @tournament.banner }
 
-%h1.pagetitle
-	%span Tournament Info:
-%h3 Year: #{@tournament.year}
-%h3 League: #{@tournament.league}
-%h3 Season: #{@tournament.year}
-
 / Race/Team Stat Overview
 / %h1.pagetitle
 / 	%span Player Stats
@@ -18,6 +12,14 @@
 / = team_stats
 
 %h1.pagetitle
-	%span Map Pool:
-- @maps.each do |map|
-	%h3 #{map.name}
+	%span Map Pool
+
+= stylesheet_link_tag "pool#{@maps.count}"
+.pool
+	%ul
+		- @maps.each do |map|
+			%li
+				.map_name
+					#{map.name}
+				%span
+					%img.maps{ :src => "/assets/maps/#{map.name}.png" }

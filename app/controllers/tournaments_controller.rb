@@ -3,6 +3,7 @@ class TournamentsController < ApplicationController
   
   def index
     @tournaments = Tournament.all
+    @tournaments.sort!{ |a,b| a.season <=> b.season }.reverse
   end
 
   def show
@@ -48,6 +49,7 @@ class TournamentsController < ApplicationController
   def overview
     @tournament = Tournament.find(params[:id])
     @maps = @tournament.map_pool.maps
+    @maps.sort!{ |a,b| a.name <=> b.name }
   end
 
   def stats
@@ -82,6 +84,7 @@ class TournamentsController < ApplicationController
     @zerg = {"Terran" => 0, "Protoss" => 0}
     @maps = {}
     @tournament.map_pool.maps.each do |map|
+      puts map.name
       @maps[map] = {"Terran" => 0, "Protoss" => 0, "Zerg" => 0}
     end
     race_map_stats
