@@ -1834,136 +1834,138 @@ def fill_groups(rounddata, groupno)
 end
 ##########/HELPERS ##########
 # Select Data
-season_number = 1
-data = inputdata[season_number-1]
+seasons = [1, 2, 3]
+seasons.each do |season_number|
+  data = inputdata[season_number-1]
 
-# Generate Tournament
-tournament = Tournament.new
-tournament.year = data["league"][0]
-tournament.league = data["league"][1]
-tournament.season = data["league"][2].split[1]
-tournament.banner = data["banner"]
+  # Generate Tournament
+  tournament = Tournament.new
+  tournament.year = data["league"][0]
+  tournament.league = data["league"][1]
+  tournament.season = data["league"][2].split[1]
+  tournament.banner = data["banner"]
 
-# Generate Map Pool
-mappool = MapPool.new
-data["maps"].each do |map|
-  check = Map.find_by_name(map)
-  if check == nil
-    input = Map.create(:name => map)
-  else
-    # Map already exists
-    input = check
+  # Generate Map Pool
+  mappool = MapPool.new
+  data["maps"].each do |map|
+    check = Map.find_by_name(map)
+    if check == nil
+      input = Map.create(:name => map)
+    else
+      # Map already exists
+      input = check
+    end
+    mappool.maps << input
   end
-  mappool.maps << input
-end
-MapPool.all.each do |pool|
-  if pool.maps == mappool.maps
-    mappool = pool
-    break
+  MapPool.all.each do |pool|
+    if pool.maps == mappool.maps
+      mappool = pool
+      break
+    end
   end
-end
-# mappool.maps << Map.all
-tournament.map_pool = mappool
+  # mappool.maps << Map.all
+  tournament.map_pool = mappool
 
-# Generate Players
-data["players"].each do |name,raceteamname|
-  check = Player.find_by_name(name)
-  if check == nil
-    player = Player.create(:name => name)
-  else
-    player = check
+  # Generate Players
+  data["players"].each do |name,raceteamname|
+    check = Player.find_by_name(name)
+    if check == nil
+      player = Player.create(:name => name)
+    else
+      player = check
+    end
+    reg = Registration.new
+    reg.tournament = tournament
+    reg.player = player
+    reg.race = raceteamname.split('~')[0]
+    reg.team = raceteamname.split('~')[1]
+    reg.save
   end
-  reg = Registration.new
-  reg.tournament = tournament
-  reg.player = player
-  reg.race = raceteamname.split('~')[0]
-  reg.team = raceteamname.split('~')[1]
-  reg.save
+
+  # Generate RO32
+  # RO32
+  ro32 = Round.new(:roundof => "RO32")
+  @roundplayers = []
+  rounddata = data["ro32"]
+  ## GroupA
+  groupA = fill_groups(rounddata, "A")
+  ro32.groups << groupA
+  ## GroupB
+  groupB = fill_groups(rounddata, "B")
+  ro32.groups << groupB
+  ## GroupC
+  groupC = fill_groups(rounddata, "C")
+  ro32.groups << groupC
+  ## GroupD
+  groupD = fill_groups(rounddata, "D")
+  ro32.groups << groupD
+  ## GroupE
+  groupE = fill_groups(rounddata, "E")
+  ro32.groups << groupE
+  ## GroupF
+  groupF = fill_groups(rounddata, "F")
+  ro32.groups << groupF
+  ## GroupG
+  groupG = fill_groups(rounddata, "G")
+  ro32.groups << groupG
+  ## GroupH
+  groupH = fill_groups(rounddata, "H")
+  ro32.groups << groupH
+  ro32.players = @roundplayers
+  tournament.rounds << ro32
+
+  # Generate RO16
+  ro16 = Round.new(:roundof => "RO16")
+  @roundplayers = []
+  rounddata = data["ro16"]
+  ## GroupA
+  groupA = fill_groups(rounddata, "A")
+  ro16.groups << groupA
+  ## GroupB
+  groupB = fill_groups(rounddata, "B")
+  ro16.groups << groupB
+  ## GroupC
+  groupC = fill_groups(rounddata, "C")
+  ro16.groups << groupC
+  ## GroupD
+  groupD = fill_groups(rounddata, "D")
+  ro16.groups << groupD
+  ro16.players = @roundplayers
+  tournament.rounds << ro16
+
+  # Generate RO8
+  ro8 = Round.new(:roundof => "RO8")
+  @roundplayers = []
+  rounddata = data["ro8"]["matches"]
+  matches = fill_matches(rounddata, "regularmatches")
+  matches.each do |match|
+  	ro8.matches << match
+  end
+  ro8.players = @roundplayers
+  tournament.rounds << ro8
+
+  # Generate RO4
+  ro4 = Round.new(:roundof => "RO4")
+  @roundplayers = []
+  rounddata = data["ro4"]["matches"]
+  matches = fill_matches(rounddata, "regularmatches")
+  matches.each do |match|
+  	ro4.matches << match
+  end
+  ro4.players = @roundplayers
+  tournament.rounds << ro4
+
+  # Generate RO2
+  ro2 = Round.new(:roundof => "RO2")
+  @roundplayers = []
+  rounddata = data["ro2"]["matches"]
+  matches = fill_matches(rounddata, "regularmatches")
+  matches.each do |match|
+  	ro2.matches << match
+  end
+  ro2.players = @roundplayers
+  tournament.rounds << ro2
+
+  tournament.save
 end
-
-# Generate RO32
-# RO32
-ro32 = Round.new(:roundof => "RO32")
-@roundplayers = []
-rounddata = data["ro32"]
-## GroupA
-groupA = fill_groups(rounddata, "A")
-ro32.groups << groupA
-## GroupB
-groupB = fill_groups(rounddata, "B")
-ro32.groups << groupB
-## GroupC
-groupC = fill_groups(rounddata, "C")
-ro32.groups << groupC
-## GroupD
-groupD = fill_groups(rounddata, "D")
-ro32.groups << groupD
-## GroupE
-groupE = fill_groups(rounddata, "E")
-ro32.groups << groupE
-## GroupF
-groupF = fill_groups(rounddata, "F")
-ro32.groups << groupF
-## GroupG
-groupG = fill_groups(rounddata, "G")
-ro32.groups << groupG
-## GroupH
-groupH = fill_groups(rounddata, "H")
-ro32.groups << groupH
-ro32.players = @roundplayers
-tournament.rounds << ro32
-
-# Generate RO16
-ro16 = Round.new(:roundof => "RO16")
-@roundplayers = []
-rounddata = data["ro16"]
-## GroupA
-groupA = fill_groups(rounddata, "A")
-ro16.groups << groupA
-## GroupB
-groupB = fill_groups(rounddata, "B")
-ro16.groups << groupB
-## GroupC
-groupC = fill_groups(rounddata, "C")
-ro16.groups << groupC
-## GroupD
-groupD = fill_groups(rounddata, "D")
-ro16.groups << groupD
-ro16.players = @roundplayers
-tournament.rounds << ro16
-
-# Generate RO8
-ro8 = Round.new(:roundof => "RO8")
-@roundplayers = []
-rounddata = data["ro8"]["matches"]
-matches = fill_matches(rounddata, "regularmatches")
-matches.each do |match|
-	ro8.matches << match
-end
-ro8.players = @roundplayers
-tournament.rounds << ro8
-
-# Generate RO4
-ro4 = Round.new(:roundof => "RO4")
-@roundplayers = []
-rounddata = data["ro4"]["matches"]
-matches = fill_matches(rounddata, "regularmatches")
-matches.each do |match|
-	ro4.matches << match
-end
-ro4.players = @roundplayers
-tournament.rounds << ro4
-
-# Generate RO2
-ro2 = Round.new(:roundof => "RO2")
-@roundplayers = []
-rounddata = data["ro2"]["matches"]
-matches = fill_matches(rounddata, "regularmatches")
-matches.each do |match|
-	ro2.matches << match
-end
-ro2.players = @roundplayers
-tournament.rounds << ro2
-
-tournament.save
 #####     DATA-SEED     #####
